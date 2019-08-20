@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <header>
+    <p class="header-text"><strong>NUMBER</strong>GUESSER</p>
+    <p class="header-subtext">ULTIMATE CHALLENGER EDITION</p>
+    </header>
+      <section class="left-side-boxes">
+        <form class="bold-form-text">
+          <h3>Set Range</h3>
+          <p class="light-form-text">
+            Min Range
+          </p>
+          <input class="input-form-box" size ="30px" />
+          <p class="light-form-text">
+              Max Range
+          </p>
+          <input class="input-form-box" size ="30px" />
+          <input class="button" type="button" name="update-button" value="UPDATE" />
+        </form>
+        <form class="light-form-text">
+          The Current Range is <span class = "range-numbers" id="min-number-from-form">1</span> to <span class="range-numbers" id="max-number-from-form">100</span>
+          <h3>Challenger 1</h3>
+          <p class="light-form-text">
+            Name
+          </p>
+            <input class="input-form-box" size="60px" />
+          <p class="light-form-text">
+            Guess
+          </p>
+            <input class="input-form-box" size="30px" />
+          <h3>Challenger 2</h3>
+          <p class="light-form-text">
+            Name
+          </p>
+          <input class="input-form-box" size="60px" />
+          <p class="light-form-text">
+            Guess
+          </p>
+          <input class="input-form-box" size="30px" />
+          <input class="button" type="button" name="update-button" value="SUBMIT GUESS" />
+          <input class="button" type="button" name="update-button" value="RESET GAME" />
+          <input class="button" type="button" name="update-button" value="CLEAR GAME" />
+        </form>
+        <article id="score-box">
+          <h3>Latest Score</h3>
+          <span class="challenger-guess-boxes">
+            <p class="bold-score-box-text challenger-1-name">
+              Challenger 1 Name
+            </p>
+            <p class="light-small-score-box-text">
+              current guess
+            </p>
+            <p class="big-pink-current-guess" id="challenger-1-number-guess">
+              97
+            </p>
+            <p class="light-medium-score-box-text" id="challenger-1-message-guess">
+              high/low msg
+            </p>
+          </span>
+          <span class="challenger-guess-boxes">
+            <p class="bold-score-box-text challenger-2-name">
+              Challenger 2 Name
+            </p>
+            <p class="light-small-score-box-text">
+              current guess
+            </p>
+            <p class="big-pink-current-guess" id="challenger-2-number-guess">
+              3
+            </p>
+            <p class="light-medium-score-box-text">
+              high/low msg
+            </p>
+          </span>
+      </section>
+      <aside>
+        <article class="winner-card">
+          <p class="challenger-1-name capital-winner-card-names">
+            Challenger 1 Name
+          </p>
+          <p class="light-small-score-box-text">
+            vs
+          </p>
+          <p class="challenger-2-name capital-winner-card-names">
+            Challenger 2 Name
+          </p>
+          <p class="bold-winner-name">
+            WINNER NAME
+          </p>
+          <p class="winner-card-winner">
+            WINNER
+          </p>
+          <p class="number-of-guesses-statement">
+          <span class="number-guesses">100</span>
+          GUESSES
+          </p>
+          <p class="number-of-minutes-statement">
+          <span class="number-minutes">5</span>
+          MINUTES
+          </p>
+          <input class="button" type="button" name="update-button" value="x" />
+        </article>
+  </body>
+</html>
