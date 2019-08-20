@@ -1,0 +1,28 @@
+* {
+  border: 1px solid red;
+};
+
+header {
+  text-align: center;
+}
+
+.under-header {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left-side-boxes {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  background-color: #F7F7F7;
+}
+
+aside {
+  width: 48%;
+  display: inline-block;
+}
+
+form {
+  background-color: #fff;
+}
