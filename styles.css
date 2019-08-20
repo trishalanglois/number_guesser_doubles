@@ -1,5 +1,5 @@
 * {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -28,15 +28,15 @@ header {
 .under-header {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .left-side-boxes {
   display: flex;
   width: 46%;
   flex-direction: column;
-  background-color: #404041;
+  background-color: #f7f7f7;
   justify-content: space-evenly;
-  margin: 5px;
 }
 
 aside {
@@ -46,4 +46,39 @@ aside {
 
 form {
   background-color: #fff;
+  margin: .5em;
+  border: 1px solid #D0D2D3;
+  padding: .5em;
+}
+
+h3 {
+  color: #404041;
+  margin: 0px;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+#min-max-range {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.light-form-text {
+  margin: 0px;
+  font-size: .75em;
+  color: #404041;
+}
+
+.input-form-box {
+  margin: 0px;
+  display: flex;
+}
+
+.button {
+  background-color: #404041;
+  color: #fff;
+  border-radius: 18px;
+  height: 2em;
+
 }
