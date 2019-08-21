@@ -33,25 +33,39 @@
         </form>
 
         <form class="left-side-cards">
-          <p class="light-form-text">The Current Range is <span class = "range-numbers" id="min-number-from-form"><strong>1</strong></span> to <span class="range-numbers" id="max-number-from-form"><strong>100</strong></span></span>
+
+          <p class="light-form-text" id="the-current-range-text">The Current Range is <span class = "range-numbers" id="min-number-from-form"><strong>1</strong></span> to <span class="range-numbers" id="max-number-from-form"><strong>100</strong></span></span>
           <h3>Challenger 1</h3>
-          <p class="light-form-text">
-            Name
-          </p>
-            <input class="input-form-box" id="challenger-1-name-input" size="60px" />
-          <p class="light-form-text">
-            Guess
-          </p>
-            <input class="input-form-box" size="30px" />
+
+          <div class="name-and-guess-wrapper">
+            <div class="name-and-box">
+              <p class="light-form-text">
+                Name
+              </p>
+              <input class="input-form-box challenger-name-input" id="challenger-1-name-input" />
+            </div>
+
+          <div class="name-and-guess-wrapper">
+              <p class="light-form-text">
+                Guess
+              </p>
+              <input class="input-form-box guess-box" />
+            </div>
+            
+          </div>
+
           <h3>Challenger 2</h3>
+
           <p class="light-form-text">
             Name
           </p>
-          <input class="input-form-box" size="60px" />
+          <input class="input-form-box challenger-name-input" id="challenger-2-name-input" size="60px" />
+
           <p class="light-form-text">
             Guess
           </p>
-          <input class="input-form-box" size="30px" />
+
+          <input class="input-form-box guess-box" size="30px" />
           <input class="button" id="submit-guess-button" type="button" name="update-button" value="SUBMIT GUESS" />
           <input class="button" type="button" name="update-button" value="RESET GAME" />
           <input class="button" type="button" name="update-button" value="CLEAR GAME" />

@@ -64,19 +64,22 @@ h3 {
   align-items: center;
 }
 
+.left-side-cards {
+  width: 80%;
+}
+
 .min-max-range-box {
   width: 25%;
 }
 
 .light-form-text {
   margin: 0px;
-  font-size: .75em;
+  font-size: .8em;
   color: #404041;
 }
 
 .input-form-box {
   margin: 0px;
-  display: flex;
   width: 100%;
 }
 
@@ -88,6 +91,32 @@ h3 {
   margin-top: 1.25em;
 }
 
+#the-current-range-text {
+  margin-bottom: em;
+}
+
 .range-numbers {
   text-decoration: underline;
 }
+
+.name-and-guess-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .name-and-guess {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.name-guess {
+  width: 48%;
+}
+
+.challenger-name-input {
+  width: 100%;
+}
+
+.guess-box {
+  width: 50%;
+} */
