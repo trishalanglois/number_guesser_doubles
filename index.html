@@ -16,28 +16,28 @@
         <form class="bold-form-text">
           <h3>Set Range</h3>
           <span id="min-max-range">
-            <div>
+            <div class="min-max-range-box">
               <p class="light-form-text">
                 Min Range
               </p>
               <input class="input-form-box" size ="15px" />
             </div>
-            <div>
+            <div class="min-max-range-box">
               <p class="light-form-text">
                   Max Range
               </p>
-            <input class="input-form-box" size ="15px" />
+            <input class="input-form-box" />
             </div>
-            <input class="button" type="button" name="update-button" value="UPDATE" />
+            <input class="button min-max-range-box" type="button" name="update-button" value="UPDATE" />
           </span>
         </form>
         <form class="light-form-text">
-          The Current Range is <span class = "range-numbers" id="min-number-from-form">1</span> to <span class="range-numbers" id="max-number-from-form">100</span>
+          The Current Range is <span class = "range-numbers" id="min-number-from-form"><strong>1</strong></span> to <span class="range-numbers" id="max-number-from-form"><strong>100</strong></span>
           <h3>Challenger 1</h3>
           <p class="light-form-text">
             Name
           </p>
-            <input class="input-form-box" size="60px" />
+            <input class="input-form-box" id="challenger-1-name-input" size="60px" />
           <p class="light-form-text">
             Guess
           </p>
@@ -51,14 +51,14 @@
             Guess
           </p>
           <input class="input-form-box" size="30px" />
-          <input class="button" type="button" name="update-button" value="SUBMIT GUESS" />
+          <input class="button" id="submit-guess-button" type="button" name="update-button" value="SUBMIT GUESS" />
           <input class="button" type="button" name="update-button" value="RESET GAME" />
           <input class="button" type="button" name="update-button" value="CLEAR GAME" />
         </form>
         <article id="score-box">
           <h3>Latest Score</h3>
           <span class="challenger-guess-boxes">
-            <p class="bold-score-box-text challenger-1-name">
+            <p class="bold-score-box-text challenger-1-name-input">
               Challenger 1 Name
             </p>
             <p class="light-small-score-box-text">
@@ -88,7 +88,7 @@
       </section>
       <aside>
         <article class="winner-card">
-          <p class="challenger-1-name capital-winner-card-names">
+          <p class="challenger-1-name-input capital-winner-card-names">
             Challenger 1 Name
           </p>
           <p class="light-small-score-box-text">
@@ -114,6 +114,7 @@
           <input class="button" type="button" name="update-button" value="x" />
         </article>
       </section>
+      <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
 
