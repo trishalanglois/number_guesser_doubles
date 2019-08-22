@@ -27,6 +27,15 @@ maxNum.addEventListener('click', function() {
   // console.log('max yes!')
 });
 
+//CHALLENGER'S NAME AND THE NUMER THEY WANT TO Guess
+var submitGuessButton = document.getElementById("submit-guess-button");
+var userGuess = document.getElementById('challenger-1-guess');
+
+
+submitGuessButton.addEventListener('click', function(){
+  if 
+
+})
 // REPLACING NAMES
 // // document.querySelectorAll('challenger-1-name-input'); //looks on our page for where the user is entering 'challenger-1-name-input'
 //
