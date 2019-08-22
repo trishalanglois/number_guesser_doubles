@@ -27,7 +27,22 @@ maxNum.addEventListener('click', function() {
   // console.log('max yes!')
 });
 
-//CHALLENGER'S NAME AND THE NUMER THEY WANT TO Guess
+//CHALLENGER'S NAME AND THE NUMER THEY WANT TO GUESS
+//ONLY ACCEPT ALPHANUMERC VALUES
+var submitGuessButton = document.getElementById("submit-guess-button");
+var userName = document.getElementById("challenger-1-name-input");
+var alphanumeric = /^[a-z0-9]+$/i;
+
+submitGuessButton.addEventListener('click', function() {
+  if (userName.value.match(alphanumeric)) {
+    console.log('okay, I see you')
+  } else {
+    //SHOW ERROR MESSAGE
+  };
+})
+
+
+//ONLY ACCEPT NUMERIC VALUES
 var submitGuessButton = document.getElementById("submit-guess-button");
 var userGuess = document.getElementById('challenger-1-guess');
 var numbers = /^[0-9]+$/;
