@@ -97,6 +97,7 @@ h3 {
 
 .range-numbers {
   text-decoration: underline;
+  font-weight: bold;
 }
 
 .name-and-guess-wrapper {

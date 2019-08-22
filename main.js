@@ -7,13 +7,24 @@ function randomNumGen(min, max) { //Creates function to generate our random numb
 };
 console.log(randomNumGen(1, 100)); // calls the function, giving us our random whole number
 
-var minNum = document.getElementById('button-min-max-range-box');
-var userMinNum = document.getElementById('user-min-number');
-var newMinNum = document.querySelector('min-number-from-form');
+//EVENT LISTENER FOR SETTING MIN AND MAX NUMBER
+//MIN NUMBER
+var userMinNum = document.getElementById('user-min-number'); //sets variable for the user's number they will input
+var newMinNum = document.getElementById('min-number-from-form'); //sets variable for number shown that's bold and underlined on the second card
+var minNum = document.getElementById('button-min-max-range-box'); //looks for something with id 'button-min-max-range' (our button)
 
-minNum.addEventListener('click', function() {
-  // newMinNum.innerText = userMinNum.value;
-  console.log('yes!')
+minNum.addEventListener('click', function() { //when button it clicked, this will invoke the function
+  newMinNum.innerText = userMinNum.value; //takes the old displayed number and replaces it with the value that the user puts into the form
+  // console.log('yes!')
+});
+//MAX NUMBER -- same functionality as above but for the max number
+var userMaxNum = document.getElementById('user-max-num');
+var newMaxNum = document.getElementById('max-number-from-form');
+var maxNum = document.getElementById('button-min-max-range-box');
+
+maxNum.addEventListener('click', function() {
+  newMaxNum.innerText = userMaxNum.value;
+  // console.log('max yes!')
 });
 
 // REPLACING NAMES
