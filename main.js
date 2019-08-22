@@ -5,9 +5,16 @@ function randomNumGen(min, max) { //Creates function to generate our random numb
   var randomNum = Math.random() * (max - min) + min // Math.random finds a random number between 0 and 1 and somehow the other operations mathematically make that a number much larger
   return Math.round(randomNum); //This rounds the decimal that we just got to an integer
 };
-
 console.log(randomNumGen(1, 100)); // calls the function, giving us our random whole number
 
+var minNum = document.getElementById('button-min-max-range-box');
+var userMinNum = document.getElementById('user-min-number');
+var newMinNum = document.querySelector('min-number-from-form');
+
+minNum.addEventListener('click', function() {
+  // newMinNum.innerText = userMinNum.value;
+  console.log('yes!')
+});
 
 // REPLACING NAMES
 // // document.querySelectorAll('challenger-1-name-input'); //looks on our page for where the user is entering 'challenger-1-name-input'
