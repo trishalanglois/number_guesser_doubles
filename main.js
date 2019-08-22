@@ -30,10 +30,16 @@ maxNum.addEventListener('click', function() {
 //CHALLENGER'S NAME AND THE NUMER THEY WANT TO Guess
 var submitGuessButton = document.getElementById("submit-guess-button");
 var userGuess = document.getElementById('challenger-1-guess');
+var numbers = /^[0-9]+$/;
 
 
 submitGuessButton.addEventListener('click', function(){
-  if 
+  if (userGuess.value.match(numbers)) {
+    console.log('numba one stunna')
+    //ACCEPT USER'S VALUE AND PROCEED WITH GAME
+  } else {
+    //SHOW ERROR MESSAGE
+  };
 
 })
 // REPLACING NAMES
