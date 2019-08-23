@@ -27,22 +27,7 @@ maxNum.addEventListener('click', function() {
   // console.log('max yes!')
 });
 
-//CHALLENGER'S NAME AND THE NUMER THEY WANT TO GUESS
-//ONLY ACCEPT ALPHANUMERC VALUES
-var submitGuessButton = document.getElementById("submit-guess-button");
-var userName = document.getElementById("challenger-1-name-input");
-var alphanumeric = /^[a-z0-9]+$/i;
-
-submitGuessButton.addEventListener('click', function() {
-  if (userName.value.match(alphanumeric)) {
-    console.log('okay, I see you')
-  } else {
-    //SHOW ERROR MESSAGE
-  };
-})
-
-
-//ONLY ACCEPT NUMERIC VALUES
+//CHALLENGER'S NAME AND THE NUMER THEY WANT TO Guess
 var submitGuessButton = document.getElementById("submit-guess-button");
 var userGuess = document.getElementById('challenger-1-guess');
 var numbers = /^[0-9]+$/;
@@ -54,9 +39,33 @@ submitGuessButton.addEventListener('click', function(){
     //ACCEPT USER'S VALUE AND PROCEED WITH GAME
   } else {
     //SHOW ERROR MESSAGE
-  };
+  }
+});
 
-})
+var userName = document.getElementById('challenger-1-name');
+var name = /^[0-9a-zA-Z]+$/;
+
+submitGuessButton.addEventListener('click', function() {
+  if (userName.value.match(name)) {
+    console.log('I see you')
+  } else {
+    //error message -- insert name
+  }
+});
+
+//CLEAR GAME BUTTON FUNCTIONALITY
+var clearGameButton = document.querySelector('#clear-game-button');
+var leftSideBoxes = document.querySelector('.left-side-boxes');
+var leftSide = document.querySelector('left-side-cards');
+var clearGame = document.querySelectorAll('form');
+
+clearGameButton.addEventListener('click', function() {
+  for (var i = 0; i < clearGame.length; i++) {
+    clearGame[i].reset();
+  }
+});
+
+
 // REPLACING NAMES
 // // document.querySelectorAll('challenger-1-name-input'); //looks on our page for where the user is entering 'challenger-1-name-input'
 //
