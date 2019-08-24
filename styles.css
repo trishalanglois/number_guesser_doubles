@@ -26,9 +26,24 @@ header {
   font-weight: lighter;
   margin: 0px;
   padding-bottom: 1em;
+  width: 36%
 }
 
-.header-subtext: before,
+#subtext-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.top-white-lines {
+  height: 1em;
+  width: 6%;
+  border-top: 1px solid #fff;
+  display: inline-block;
+}
+
+/* .header-subtext: before,
 .header-subtext: after {
   content: "";
   position: absolute;
@@ -36,7 +51,7 @@ header {
   border: 3px 0px 0px 0px;
   border: #fff;
   width: 100%;
-}
+} */
 
 .under-header {
   display: flex;
@@ -50,10 +65,11 @@ header {
   flex-direction: column;
   background-color: #f7f7f7;
   justify-content: space-evenly;
+  border-bottom: 1px solid #D0D2D3;
 }
 
 aside {
-  width: 50%;
+  width: 49.7%;
 
 }
 
@@ -133,12 +149,12 @@ h3 {
 
 #score-box {
   display: flex;
-  justy: space-between;
+  justify-content: center;
 }
 
 .challenger-guess-boxes {
   text-align: center;
-  width: 100%;
+  width: 95%;
 }
 
 .bold-score-box-text {
@@ -161,34 +177,25 @@ h3 {
   color: #404041;
 }
 
-
-/* .name-and-guess {
-  display: flex;
-  flex-flow: row wrap;
+#grey-vertical-line {
+  width: 1%;
+  height: inherit;
+  border-left: 1px solid #D0D2D3;
 }
-
-.name-guess {
-  width: 48%;
-}
-
-.challenger-name-input {
-  width: 100%;
-}
-
-.guess-box {
-  width: 50%;
-} */
 
 aside {
   background-color: #D0D2D3;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-left: 1px solid #6E6E6E;
+  border-bottom: 1px solid #6E6E6E;
 }
 .winner-card {
   background-color: #fff;
   width: 90%;
   margin: .5em;
+  border: 1px solid #6E6E6E;
 }
 
 #challenger-1-vs-challenger-2-wrapper {
@@ -197,20 +204,26 @@ aside {
   margin-top: .75em;
 }
 
+.grey-horizontal-lines {
+  height: 1em;
+  width: 90%;
+  border-top: 1px solid #D0D2D3;
+  /* display: inline-block; */
+}
+
 .bold-winner-name {
   color: #6E6E6E;
   font-size: 2em;
   font-weight: bold;
-  margin-top: 1em;
+  margin-top: 0px;
   margin-bottom: 0px;
 }
 
 .winner-card-winner {
   color: #6E6E6E;
   font-size: 2em;
-  margin-top: 0px;
   font-weight: lighter;
-  margin: 0px;
+  margin: 0px 0px 10px 0px;
 }
 
 #winner-name-and-winner {
@@ -222,4 +235,5 @@ aside {
 #guesses-minutes-button-wrapper {
   display: flex;
   justify-content: space-around;
+  margin-top: -1.5em;
 }
