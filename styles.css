@@ -10,6 +10,7 @@ body {
 header {
   text-align: center;
   background-color: #404041;
+  margin: 0px;
 }
 
 .header-text {
@@ -23,6 +24,18 @@ header {
   color: #fff;
   margin-top: 0px;
   font-weight: lighter;
+  margin: 0px;
+  padding-bottom: 1em;
+}
+
+.header-subtext: before,
+.header-subtext: after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  border: 3px 0px 0px 0px;
+  border: #fff;
+  width: 100%;
 }
 
 .under-header {
@@ -33,14 +46,14 @@ header {
 
 .left-side-boxes {
   display: flex;
-  width: 46%;
+  width: 50%;
   flex-direction: column;
   background-color: #f7f7f7;
   justify-content: space-evenly;
 }
 
 aside {
-  width: 49%;
+  width: 50%;
 
 }
 
@@ -53,12 +66,12 @@ h3 {
 
 #min-max-range {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
 .left-side-cards {
-  width: 80%;
+  width: 88%;
   background-color: #fff;
   margin: .5em;
   border: 1px solid #D0D2D3;
@@ -95,6 +108,7 @@ h3 {
   border-radius: 18px;
   height: 2em;
   margin-top: 1.25em;
+  font-weight: bold;
 }
 
 #the-current-range-text {
@@ -108,7 +122,7 @@ h3 {
 
 .name-and-guess-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .name-error-msg {
@@ -164,3 +178,31 @@ h3 {
 .guess-box {
   width: 50%;
 } */
+
+aside {
+  background-color: #D0D2D3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.winner-card {
+  background-color: #fff;
+  width: 90%;
+  margin: .5em;
+}
+
+#challenger-1-vs-challenger-2-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+#winner-name-and-winner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#guesses-minutes-button-wrapper {
+  display: flex;
+  justify-content: space-around;
+}

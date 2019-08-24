@@ -9,6 +9,9 @@
   <body>
     <header>
       <p class="header-text"><strong>NUMBER</strong>GUESSER</p>
+
+      <div id="subtext-wrapper">
+
       <p class="header-subtext"><lighter>ULTIMATE CHALLENGER EDITION<lighter></p>
     </header>
     <section class = "under-header">
@@ -125,30 +128,41 @@
 
       <aside>
         <article class="winner-card">
-          <p class="challenger-1-name-input capital-winner-card-names">
-            Challenger 1 Name
-          </p>
-          <p class="light-small-score-box-text">
-            vs
-          </p>
-          <p class="challenger-2-name capital-winner-card-names">
-            Challenger 2 Name
-          </p>
-          <p class="bold-winner-name">
-            WINNER NAME
-          </p>
-          <p class="winner-card-winner">
-            WINNER
-          </p>
-          <p class="number-of-guesses-statement">
-          <span class="number-guesses">100</span>
-          GUESSES
-          </p>
-          <p class="number-of-minutes-statement">
-          <span class="number-minutes">5</span>
-          MINUTES
-          </p>
-          <input class="button" type="button" name="update-button" value="x" />
+          <div id="challenger-1-vs-challenger-2-wrapper">
+            <p class="challenger-1-name-input capital-winner-card-names">
+              Challenger 1 Name
+            </p>
+            <p class="light-small-score-box-text">
+              vs
+            </p>
+            <p class="challenger-2-name capital-winner-card-names">
+              Challenger 2 Name
+            </p>
+          </div>
+
+          <div id="winner-name-and-winner">
+            <p class="bold-winner-name">
+              WINNER NAME
+            </p>
+            <p class="winner-card-winner">
+              WINNER
+            </p>
+          </div>
+
+          <div id="guesses-minutes-button-wrapper">
+            <p class="number-of-guesses-statement">
+            <span class="number-guesses">100</span>
+            GUESSES
+            </p>
+
+            <p class="number-of-minutes-statement">
+            <span class="number-minutes">5</span>
+            MINUTES
+            </p>
+
+            <input class="button" type="button" name="update-button" value="X" />
+          </div>
+
         </article>
       </section>
       <script type="text/javascript" src="main.js"></script>
