@@ -10,12 +10,13 @@ body {
 header {
   text-align: center;
   background-color: #404041;
+  margin: 0px;
 }
 
 .header-text {
   color: #DD1972;
   font-size: 2.5em;
-  margin-top: 20px;
+  margin-top: 0px;
   margin-bottom: 0px;
 }
 
@@ -23,6 +24,18 @@ header {
   color: #fff;
   margin-top: 0px;
   font-weight: lighter;
+  margin: 0px;
+  padding-bottom: 1em;
+}
+
+.header-subtext: before,
+.header-subtext: after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  border: 3px 0px 0px 0px;
+  border: #fff;
+  width: 100%;
 }
 
 .under-header {
@@ -33,22 +46,15 @@ header {
 
 .left-side-boxes {
   display: flex;
-  width: 46%;
+  width: 50%;
   flex-direction: column;
   background-color: #f7f7f7;
   justify-content: space-evenly;
 }
 
 aside {
-  width: 49%;
+  width: 50%;
 
-}
-
-form {
-  background-color: #fff;
-  margin: .5em;
-  border: 1px solid #D0D2D3;
-  padding: .5em;
 }
 
 h3 {
@@ -60,12 +66,16 @@ h3 {
 
 #min-max-range {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
 .left-side-cards {
-  width: 80%;
+  width: 88%;
+  background-color: #fff;
+  margin: .5em;
+  border: 1px solid #D0D2D3;
+  padding: .5em;
 }
 
 .min-max-range-box {
@@ -75,12 +85,21 @@ h3 {
 .light-form-text {
   margin: 0px;
   font-size: .8em;
-  color: #404041;
+  color: #6E6E6E;
 }
 
 .input-form-box {
   margin: 0px;
   width: 100%;
+}
+
+.name-guess-display {
+  width: 50%;
+}
+
+#three-button-wrapper {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .button {
@@ -89,6 +108,7 @@ h3 {
   border-radius: 18px;
   height: 2em;
   margin-top: 1.25em;
+  font-weight: bold;
 }
 
 #the-current-range-text {
@@ -100,16 +120,47 @@ h3 {
   font-weight: bold;
 }
 
-/* .name-and-guess-wrapper {
+.name-and-guess-wrapper {
   display: flex;
-  justify-content: space-between;
-} */
+  justify-content: space-around;
+}
 
 .name-error-msg {
   color: #DD1972;
   font-size: .5em;
   display: none;
 }
+
+#score-box {
+  display: flex;
+  justy: space-between;
+}
+
+.challenger-guess-boxes {
+  text-align: center;
+  width: 100%;
+}
+
+.bold-score-box-text {
+  color: #404041;
+  margin: 0px;
+  font-weight: bold;
+  font-size: .75em;
+}
+
+.big-pink-current-guess {
+  color: #DD1972;
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.light-medium-score-box-text {
+  margin: 0px;
+  font-size: 1em;
+  color: #404041;
+}
+
 
 /* .name-and-guess {
   display: flex;
@@ -127,3 +178,48 @@ h3 {
 .guess-box {
   width: 50%;
 } */
+
+aside {
+  background-color: #D0D2D3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.winner-card {
+  background-color: #fff;
+  width: 90%;
+  margin: .5em;
+}
+
+#challenger-1-vs-challenger-2-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: .75em;
+}
+
+.bold-winner-name {
+  color: #6E6E6E;
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 0px;
+}
+
+.winner-card-winner {
+  color: #6E6E6E;
+  font-size: 2em;
+  margin-top: 0px;
+  font-weight: lighter;
+  margin: 0px;
+}
+
+#winner-name-and-winner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#guesses-minutes-button-wrapper {
+  display: flex;
+  justify-content: space-around;
+}

@@ -9,6 +9,9 @@
   <body>
     <header>
       <p class="header-text"><strong>NUMBER</strong>GUESSER</p>
+
+      <div id="subtext-wrapper">
+
       <p class="header-subtext"><lighter>ULTIMATE CHALLENGER EDITION<lighter></p>
     </header>
     <section class = "under-header">
@@ -28,7 +31,7 @@
               </p>
             <input class="input-form-box" id="user-max-num"/>
             </div>
-            <input id="button-min-max-range-box" type="button" name="update-button" value="UPDATE" />
+            <input class="button" id="button-min-max-range-box" type="button" name="update-button" value="UPDATE" />
           </span>
         </form>
 
@@ -39,7 +42,7 @@
 
           <div class="name-and-guess-wrapper">
             <div class="name-and-box">
-              <p class="light-form-text">
+              <p class="light-form-text name-guess-display">
                 Name
               </p>
               <input class="input-form-box challenger-name-input" id="challenger-1-name-input" />
@@ -48,7 +51,9 @@
               <img src=>
               Enter a name
             </div>
-              <p class="light-form-text">
+
+            <div>
+              <p class="light-form-text name-guess-display">
                 Guess
               </p>
               <input class="input-form-box guess-box" id="challenger-1-guess"/>
@@ -58,80 +63,106 @@
 
           <h3>Challenger 2</h3>
           <div class="name-and-guess-wrapper">
-          <p class="light-form-text">
-            Name
-          </p>
-          <input class="input-form-box challenger-name-input" id="challenger-2-name-input" size="60px" />
-          <div class="name-error-msg">
-            <img src=>
-            Enter a name
+            <div>
+              <p class="light-form-text name-guess-display">
+                Name
+              </p>
+              <input class="input-form-box challenger-name-input" id="challenger-2-name-input" />
+              <div class="name-error-msg">
+                <img src=>
+                Enter a name
+              </div>
+            </div>
+
+            <div>
+              <p class="light-form-text name-guess-display">
+                Guess
+              </p>
+              <input class="input-form-box guess-box" id="challenger-2-guess" />
+            </div>
           </div>
-            <p class="light-form-text">
-              Guess
-            </p>
-            <input class="input-form-box guess-box" size="30px" />
-        </div>
-          <input class="button" id="submit-guess-button" type="submit" name="update-button" value="SUBMIT GUESS" />
-          <input class="button" type="reset" name="update-button" value="RESET GAME" />
-          <input class="button" id="clear-game-button" type="button" name="update-button" value="CLEAR GAME" />
+
+          <div id='three-button-wrapper'>
+            <input class="button" id="submit-guess-button" type="submit" name="update-button" value="SUBMIT GUESS" />
+            <input class="button" type="reset" name="update-button" value="RESET GAME" />
+            <input class="button" id="clear-game-button" type="button" name="update-button" value="CLEAR GAME" />
+          </div>
         </form>
-        <article class="left-side-cards" id="score-box">
-          <h3>Latest Score</h3>
-          <span class="challenger-guess-boxes">
-            <p class="bold-score-box-text challenger-1-name-input">
-              Challenger 1 Name
-            </p>
-            <p class="light-small-score-box-text">
-              current guess
-            </p>
-            <p class="big-pink-current-guess" id="challenger-1-number-guess">
-              97
-            </p>
-            <p class="light-medium-score-box-text" id="challenger-1-message-guess">
-              high/low msg
-            </p>
-          </span>
-          <span class="challenger-guess-boxes">
-            <p class="bold-score-box-text challenger-2-name">
-              Challenger 2 Name
-            </p>
-            <p class="light-small-score-box-text">
-              current guess
-            </p>
-            <p class="big-pink-current-guess" id="challenger-2-number-guess">
-              3
-            </p>
-            <p class="light-medium-score-box-text">
-              high/low msg
-            </p>
-          </span>
+
+        <article class="left-side-cards">
+          <div>
+            <h3>Latest Score</h3>
+            <div id="score-box" >
+              <span class="challenger-guess-boxes">
+                <p class="bold-score-box-text challenger-1-name-input">
+                  Challenger 1 Name
+                </p>
+                <p class="light-form-text">
+                  current guess
+                </p>
+                <p class="big-pink-current-guess" id="challenger-1-number-guess">
+                  97
+                </p>
+                <p class="light-medium-score-box-text" id="challenger-1-message-guess">
+                  high/low msg
+                </p>
+              </span>
+
+              <span class="challenger-guess-boxes">
+                <p class="bold-score-box-text challenger-2-name">
+                  Challenger 2 Name
+                </p>
+                <p class="light-form-text">
+                  current guess
+                </p>
+                <p class="big-pink-current-guess" id="challenger-2-number-guess">
+                  3
+                </p>
+                <p class="light-medium-score-box-text">
+                  high/low msg
+                </p>
+              </span>
+            </div>
+          </div>
       </section>
+
       <aside>
         <article class="winner-card">
-          <p class="challenger-1-name-input capital-winner-card-names">
-            Challenger 1 Name
-          </p>
-          <p class="light-small-score-box-text">
-            vs
-          </p>
-          <p class="challenger-2-name capital-winner-card-names">
-            Challenger 2 Name
-          </p>
-          <p class="bold-winner-name">
-            WINNER NAME
-          </p>
-          <p class="winner-card-winner">
-            WINNER
-          </p>
-          <p class="number-of-guesses-statement">
-          <span class="number-guesses">100</span>
-          GUESSES
-          </p>
-          <p class="number-of-minutes-statement">
-          <span class="number-minutes">5</span>
-          MINUTES
-          </p>
-          <input class="button" type="button" name="update-button" value="x" />
+          <div id="challenger-1-vs-challenger-2-wrapper">
+            <p class="challenger-1-name-input bold-score-box-text">
+              Challenger 1 Name
+            </p>
+            <p class="light-form-text">
+              vs
+            </p>
+            <p class="challenger-2-name bold-score-box-text">
+              Challenger 2 Name
+            </p>
+          </div>
+
+          <div id="winner-name-and-winner">
+            <p class="bold-winner-name">
+              WINNER NAME
+            </p>
+            <p class="winner-card-winner">
+              WINNER
+            </p>
+          </div>
+
+          <div id="guesses-minutes-button-wrapper">
+            <p class="number-of-guesses-statement">
+              <span class="number-guesses bold-score-box-text">100</span>
+              <span class="light-form-text">GUESSES</span>
+            </p>
+
+            <p class="number-of-minutes-statement">
+              <span class="number-minutes bold-score-box-text">5</span>
+              <span class="light-form-text">MINUTES</span>
+            </p>
+
+            <input class="button" type="button" name="update-button" value="X" />
+          </div>
+
         </article>
       </section>
       <script type="text/javascript" src="main.js"></script>
