@@ -45,13 +45,16 @@ submitGuessButton.addEventListener('click', function (){
   // Update Latest Score Challenger 1 name with entered value
   challenger1UpdatedName.innerText = challenger1Name.value;
   // Update Latest Score Challenger 1 current guess
-  challenger1PinkGuess.innerText = challenger
-  // Update Latest Score Challenger 1 high/low
+  challenger2UpdatedName .innerText = challenger2Name.value;
 
   // Update Latest Score Challenger 2 current guess
-  // Update Latest Score Challenger 2 name with entered value
-  // Update Latest Score Challenger 2 high/low
+  challenger1PinkGuess.innerText = challenger1Guess.value;
+  // Update Latest Score Challenger 1 high/low
 
+  // Update Latest Score Challenger 2 name with entered value
+  challenger2PinkGuess.innerText = challenger2Guess.value;
+  // Update Latest Score Challenger 2 high/low
+});
 
   // if (userGuess.value.match(numbers)) {
     // console.log('numba one stunna')
@@ -76,7 +79,7 @@ submitGuessButton.addEventListener('click', function (){
   // challenger1PinkGuess.innerText = challenger1EnteredGuess.value;
   // challenger2PinkGuess.innerText = challenger2EnteredGuess.value;
 
-});
+// });
 
 
 //
