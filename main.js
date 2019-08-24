@@ -58,12 +58,24 @@ var clearGameButton = document.querySelector('#clear-game-button');
 var leftSideBoxes = document.querySelector('.left-side-boxes');
 var leftSide = document.querySelector('left-side-cards');
 var clearGame = document.querySelectorAll('form');
+var inputForm = document.querySelectorAll('input-form-box');
 
 clearGameButton.addEventListener('click', function() {
   for (var i = 0; i < clearGame.length; i++) {
     clearGame[i].reset();
   }
 });
+
+function clearForm() {
+  //if there is a value in any of the inputs, enable clear button
+  if (inputForm === '') {
+    clearGameButton.disabled = false;
+  } else {
+    clearGameButton.disabled = true;
+  }
+};
+
+ //else, disable clear button
 
 
 // REPLACING NAMES
