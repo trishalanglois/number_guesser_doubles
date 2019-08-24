@@ -85,7 +85,7 @@ h3 {
 .light-form-text {
   margin: 0px;
   font-size: .8em;
-  color: #404041;
+  color: #6E6E6E;
 }
 
 .input-form-box {
@@ -194,6 +194,23 @@ aside {
 #challenger-1-vs-challenger-2-wrapper {
   display: flex;
   justify-content: space-around;
+  margin-top: .75em;
+}
+
+.bold-winner-name {
+  color: #6E6E6E;
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 0px;
+}
+
+.winner-card-winner {
+  color: #6E6E6E;
+  font-size: 2em;
+  margin-top: 0px;
+  font-weight: lighter;
+  margin: 0px;
 }
 
 #winner-name-and-winner {
