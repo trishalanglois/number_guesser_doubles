@@ -1,7 +1,11 @@
 //GETTING RANDOM NUMBER WITHIN GIVEN RANGE
+var min = 1;
+var max = 100;
+var randomNum = parseInt(Math.random() * (max - min) + min);
+
 function randomNumGen(min, max) {
-  var randomNum = Math.random() * (max - min) + min;
-  console.log(Math.round(randomNum));
+  randomNum = parseInt(Math.random() * (max - min) + min);
+  console.log(randomNum);
 };
 
 //EVENT LISTENER FOR SETTING MIN AND MAX NUMBER, THEN GETTING RANDOM NUMBER WITHIN RANGE
@@ -16,8 +20,6 @@ updateRangeButton.addEventListener('click', function() {
   newMaxNum.innerText = userMaxNum.value;
   var parseMin = parseInt(userMinNum.value);
   var parseMax = parseInt(userMaxNum.value);
-  // console.log(parseMin);
-  // console.log(parseMax);
   randomNumGen(parseMin, parseMax)
 });
 
@@ -35,57 +37,68 @@ var challenger2UpdatedName = document.querySelector('.challenger-2-input-display
 var challenger2Guess = document.querySelector('#challenger-2-guess');
 var challenger2PinkGuess = document.querySelector('#challenger-2-number-guess');
 
+var guessFeedbackMessage1 = document.querySelector('#challenger-1-message-guess');
+var guessFeedbackMessage2 = document.querySelector('#challenger-2-message-guess');
+
 submitGuessButton.addEventListener('click', function (){
-  // Refactor: For each challenger, update name, current guess, and show msg if too high or too low
+  // Refactor: For each challenger, check for alpha/numeric values, update name, current guess, and show msg if too high or too low
 
-  // SPECIFIC:
-  // Update Latest Score Challenger 1 name with entered value
+// check challenger1Name == alphanumeric
+// if not, show error
+// check challenger1Guess == numeric
+// if not, show error
+// check challenger2Name == alphanumeric
+// if not, show error
+// check challenger1Guess == numeric
+// if not, show error
+
   challenger1UpdatedName.innerText = challenger1Name.value;
-  // Update Latest Score Challenger 1 current guess
   challenger2UpdatedName .innerText = challenger2Name.value;
-
-  // Update Latest Score Challenger 2 current guess
   challenger1PinkGuess.innerText = challenger1Guess.value;
-  // Update Latest Score Challenger 1 high/low
-
-  // Update Latest Score Challenger 2 name with entered value
   challenger2PinkGuess.innerText = challenger2Guess.value;
+
+  //change guesses to parsed values
+  var parseChallenger1 = parseInt(challenger1Guess.value);
+  var parseChallenger2 = parseInt(challenger2Guess.value);
+
+  // Update Latest Score Challenger 1 high/low
+  if (parseChallenger1 > randomNum) {
+    guessFeedbackMessage1.innerText = "That's too high!"
+  } else if (parseChallenger1 < randomNum) {
+    guessFeedbackMessage1.innerText = "That's too low!"
+  } else {
+    guessFeedbackMessage1.innerText = 'BOOM!'
+  }
   // Update Latest Score Challenger 2 high/low
+  if (parseChallenger2 > randomNum) {
+    guessFeedbackMessage2.innerText = "That's too high!"
+  } else if (parseChallenger2 < randomNum) {
+    guessFeedbackMessage2.innerText = "That's too low!"
+  } else {
+    guessFeedbackMessage2.innerText = 'BOOM!'
+  }
+
 });
 
-
-
-  // if (userGuess.value.match(numbers)) {
-    // console.log('numba one stunna')
-    //ACCEPT USER'S VALUE AND PROCEED WITH GAME
-  // }
-
-  // if (userName.value.match(name)) {
-  //   console.log('I see you')
-  // } else {
-    //error message -- insert name
-  // }
-
-//CLEAR GAME BUTTON FUNCTIONALITY
+//CLEAR GAME BUTTON FUNCTIONALITY -- not working!
 var clearGameButton = document.querySelector('#clear-game-button');
 var leftSideBoxes = document.querySelector('.left-side-boxes');
 var leftSide = document.querySelector('left-side-cards');
 var clearGame = document.querySelectorAll('form');
 var inputForm = document.querySelectorAll('input-form-box');
 
+function clearButtonDisable() {
+  if (clearGame.value == '') {
+    clearGameButton.disabled = false;
+  } else {
+  clearGameButton.disabled = true;
+  }
+};
+
+
 clearGameButton.addEventListener('click', function() {
+  console.log('hi');
   for (var i = 0; i < clearGame.length; i++) {
     clearGame[i].reset();
   }
 });
-
-// function clearForm() {
-//   //if there is a value in any of the inputs, enable clear button
-//   if (inputForm == '') {
-//     clearGameButton.disabled = false;
-//   } else {
-//     clearGameButton.disabled = true;
-//     console.log('test');
-//   }
-// };
- //else, disable clear button
