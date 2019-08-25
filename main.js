@@ -1,6 +1,8 @@
 
 
 //GETTING RANDOM NUMBER WITHIN A RANGE
+
+
 function randomNumGen(min, max) {
   var randomNum = Math.random() * (max - min) + min;
   return Math.round(randomNum);
@@ -16,6 +18,10 @@ var updateRangeButton = document.getElementById('button-min-max-range-box');
 updateRangeButton.addEventListener('click', function() {
   newMinNum.innerText = userMinNum.value;
   newMaxNum.innerText = userMaxNum.value;
+  var parseMin = parseInt(userMinNum.value);
+  var parseMax = parseInt(userMaxNum.value);
+  console.log(parseMin);
+  console.log(parseMax);
   // console.log('yes!')
 });
 
