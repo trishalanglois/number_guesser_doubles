@@ -1,14 +1,10 @@
-
-
-//GETTING RANDOM NUMBER WITHIN A RANGE
-
-
+//GETTING RANDOM NUMBER WITHIN GIVEN RANGE
 function randomNumGen(min, max) {
   var randomNum = Math.random() * (max - min) + min;
-  return Math.round(randomNum);
+  console.log(Math.round(randomNum));
 };
 
-//EVENT LISTENER FOR SETTING MIN AND MAX NUMBER
+//EVENT LISTENER FOR SETTING MIN AND MAX NUMBER, THEN GETTING RANDOM NUMBER WITHIN RANGE
 var userMinNum = document.getElementById('user-min-number');
 var newMinNum = document.getElementById('min-number-from-form');
 var userMaxNum = document.getElementById('user-max-num');
@@ -20,9 +16,9 @@ updateRangeButton.addEventListener('click', function() {
   newMaxNum.innerText = userMaxNum.value;
   var parseMin = parseInt(userMinNum.value);
   var parseMax = parseInt(userMaxNum.value);
-  console.log(parseMin);
-  console.log(parseMax);
-  // console.log('yes!')
+  // console.log(parseMin);
+  // console.log(parseMax);
+  randomNumGen(parseMin, parseMax)
 });
 
 //CHALLENGER'S NAME AND THE NUMER THEY WANT TO Guess, CHECKING FOR NUMERIC AND ALPHANUMERIC COMPATIBILITY
