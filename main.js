@@ -3,47 +3,17 @@ var min = 1;
 var max = 100;
 var randomNum = parseInt(Math.random() * (max - min) + min);
 
-function randomNumGen(min, max) {
-  randomNum = parseInt(Math.random() * (max - min) + min);
-  console.log(randomNum);
-};
-
-//EVENT LISTENER FOR SETTING MIN AND MAX NUMBER, THEN GETTING RANDOM NUMBER WITHIN RANGE
 var userMinNum = document.getElementById('user-min-number');
 var newMinNum = document.getElementById('min-number-from-form');
 var userMaxNum = document.getElementById('user-max-num');
 var newMaxNum = document.getElementById('max-number-from-form');
 var updateRangeButton = document.getElementById('button-min-max-range-box');
 
-updateRangeButton.addEventListener('click', function() {
-  newMinNum.innerText = userMinNum.value;
-  newMaxNum.innerText = userMaxNum.value;
-  var parseMin = parseInt(userMinNum.value);
-  var parseMax = parseInt(userMaxNum.value);
-  randomNumGen(parseMin, parseMax)
-});
-
-//DISABLE/ENABLE RESET AND CLEAR BUTTONS -- look over this again
 var enableButtons = document.querySelectorAll('.disable-button'); //
 var contentInForms = document.querySelectorAll('.input-form-box');
 
-function disableButtons() {
-  enableButtons.disabled = true;
-};
-
-for (var i = 0; i < contentInForms.length; i++) {
-  contentInForms[i].addEventListener('input', function() {
-    for (var j = 0; j < enableButtons.length; j++) {
-      enableButtons[j].disabled = false;
-      enableButtons[j].classList.remove('disable-button');
-    }
-  });
-  enableButtons.disabled = false;
-};
-
-//CHALLENGER'S NAME AND THE NUMER THEY WANT TO Guess, CHECKING FOR NUMERIC AND ALPHANUMERIC COMPATIBILITY
 var name = /^[0-9a-zA-Z]+$/;
-var numbers = /^[0-9]+$/;
+var number = /^[0-9]+$/;
 var submitGuessButton = document.getElementById('submit-guess-button');
 var challenger1Name = document.getElementById('challenger-1-name-input');
 var challenger1UpdatedName = document.querySelector('.challenger-1-input-display');
@@ -65,28 +35,82 @@ var errorChallenger2Guess = document.querySelector('#error-msg-challenger-2-gues
 
 var winnerCard = document.querySelector('.winner-card');
 
-submitGuessButton.addEventListener('click', function (){
-  // Refactor: For each challenger, check for alpha/numeric values, update name, current guess, and show msg if too high or too low
 
-// check challenger1Name == alphanumeric
+updateRangeButton.addEventListener('click', function() {
+  newMinNum.innerText = userMinNum.value;
+  newMaxNum.innerText = userMaxNum.value;
+  var parseMin = parseInt(userMinNum.value);
+  var parseMax = parseInt(userMaxNum.value);
+  randomNumGen(parseMin, parseMax)
+});
+
+
+
+function randomNumGen(min, max) {
+  randomNum = parseInt(Math.random() * (max - min) + min);
+  console.log(randomNum);
+};
+
+function disableButtons() {
+  enableButtons.disabled = true;
+};
+
+for (var i = 0; i < contentInForms.length; i++) {
+  contentInForms[i].addEventListener('input', function() {
+    for (var j = 0; j < enableButtons.length; j++) {
+      enableButtons[j].disabled = false;
+      enableButtons[j].classList.remove('disable-button');
+    }
+  });
+  enableButtons.disabled = false;
+};
+
+
+//CHALLENGER'S NAME AND THE NUMER THEY WANT TO Guess, CHECKING FOR NUMERIC AND ALPHANUMERIC COMPATIBILITY
+
+submitGuessButton.addEventListener('click', clickSubmit);
+
+function clickSubmit(){
+  checkName1();
+  checkName2();
+  checkGuess1();
+  checkGuess2();
+
+function checkName1(){
   if (challenger1Name.value !== name) {
-    // console.log('not a name');
     errorChallenger1Name.style.display = "inline";
-    //show name error message under challenger 1// -- USE WORD RETURN FOR ERROR
-  };
-  if (challenger1Guess.value !== numbers) {
-    // console.log('not a number');
-    errorChallenger1Guess.style.display = "inline";
-    //show number error message under guess 1 -- USE WORD RETURN FOR ERROR
-  };
+  } else {
+    errorChallenger1Name.style.display = "none";
+  }
+};
+
+function checkName2(){
   if (challenger2Name.value !== name) {
     errorChallenger2Name.style.display = "inline";
-    //show name error message under challenger 2 -- USE WORD RETURN FOR ERROR
-  };
-  if (challenger2Guess.value !== numbers) {
-    errorChallenger2Guess.style.display = 'inline';
-    //show number error message under guess 2 -- USE WORD RETURN FOR ERROR
-  };
+  } else {
+    errorChallenger2Name.style.display = "none";
+  }
+};
+
+
+function checkGuess1(){
+  if (challenger1Guess.value !== number) {
+    errorChallenger1Guess.style.display = "inline";
+  } else {
+    errorChallenger1Guess.style.display = "none";
+  }
+};
+
+function checkGuess2(){
+  if (challenger2Guess.value !== number) {
+    errorChallenger2Guess.style.display = "inline";
+  } else {
+    errorChallenger2Guess.style.display = "none";
+  }
+};
+
+
+
 
   challenger1UpdatedName.innerText = challenger1Name.value;
   challenger2UpdatedName .innerText = challenger2Name.value;
@@ -104,7 +128,7 @@ submitGuessButton.addEventListener('click', function (){
     guessFeedbackMessage1.innerText = "That's too low!"
   } else {
     guessFeedbackMessage1.innerText = 'BOOM!'
-  }
+  };
   // Update Latest Score Challenger 2 high/low
   if (parseChallenger2 > randomNum) {
     guessFeedbackMessage2.innerText = "That's too high!"
@@ -112,10 +136,10 @@ submitGuessButton.addEventListener('click', function (){
     guessFeedbackMessage2.innerText = "That's too low!"
   } else {
     guessFeedbackMessage2.innerText = 'BOOM!';
-    winnerCard.style.display = 'block';
+    winnerCard.style.display === 'block';
   }
 
-});
+};
 
 //CLEAR GAME BUTTON FUNCTIONALITY
 var clearGameButton = document.querySelector('#clear-game-button');
