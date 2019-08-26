@@ -63,6 +63,8 @@ var errorChallenger1Guess = document.querySelector('#error-msg-challenger-1-gues
 var errorChallenger2Name = document.querySelector('#error-msg-challenger-2-name');
 var errorChallenger2Guess = document.querySelector('#error-msg-challenger-2-guess');
 
+var winnerCard = document.querySelector('.winner-card');
+
 submitGuessButton.addEventListener('click', function (){
   // Refactor: For each challenger, check for alpha/numeric values, update name, current guess, and show msg if too high or too low
 
@@ -71,18 +73,18 @@ submitGuessButton.addEventListener('click', function (){
     // console.log('not a name');
     errorChallenger1Name.style.display = "inline";
     //show name error message under challenger 1// -- USE WORD RETURN FOR ERROR
-  }
+  };
   if (challenger1Guess.value !== numbers) {
     // console.log('not a number');
     errorChallenger1Guess.style.display = "inline";
     //show number error message under guess 1 -- USE WORD RETURN FOR ERROR
-  }
+  };
   if (challenger2Name.value !== name) {
     errorChallenger2Name.style.display = "inline";
     //show name error message under challenger 2 -- USE WORD RETURN FOR ERROR
-  }
+  };
   if (challenger2Guess.value !== numbers) {
-    errorChallenger2Guess.style.display = "inline";
+    errorChallenger2Guess.style.display = 'inline';
     //show number error message under guess 2 -- USE WORD RETURN FOR ERROR
   };
 
@@ -109,7 +111,8 @@ submitGuessButton.addEventListener('click', function (){
   } else if (parseChallenger2 < randomNum) {
     guessFeedbackMessage2.innerText = "That's too low!"
   } else {
-    guessFeedbackMessage2.innerText = 'BOOM!'
+    guessFeedbackMessage2.innerText = 'BOOM!';
+    winnerCard.style.display = 'block';
   }
 
 });
