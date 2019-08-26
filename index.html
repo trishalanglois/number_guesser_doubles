@@ -58,7 +58,7 @@
         <article id="score-box">
           <h3>Latest Score</h3>
           <span class="challenger-guess-boxes">
-            <p class="bold-score-box-text challenger-1-name">
+            <p class="bold-score-box-text-challenger-1-name">
               Challenger 1 Name
             </p>
             <p class="light-small-score-box-text">
@@ -72,7 +72,7 @@
             </p>
           </span>
           <span class="challenger-guess-boxes">
-            <p class="bold-score-box-text challenger-2-name">
+            <p class="bold-score-box-text-challenger-2-name">
               Challenger 2 Name
             </p>
             <p class="light-small-score-box-text">
@@ -87,33 +87,26 @@
           </span>
       </section>
       <aside>
-        <article class="winner-card">
-          <p class="challenger-1-name capital-winner-card-names">
-            Challenger 1 Name
-          </p>
-          <p class="light-small-score-box-text">
-            vs
-          </p>
-          <p class="challenger-2-name capital-winner-card-names">
-            Challenger 2 Name
-          </p>
-          <p class="bold-winner-name">
-            WINNER NAME
-          </p>
-          <p class="winner-card-winner">
-            WINNER
-          </p>
-          <p class="number-of-guesses-statement">
-          <span class="number-guesses">100</span>
-          GUESSES
-          </p>
-          <p class="number-of-minutes-statement">
+        <section class="right-section">
+         <article class="winner-card">
+       <div class="winner-card-top-third">
+            <span class="challenger-1-name capital-winner-card-names">CHALLENGER 1 NAME</span>
+            <p class="vs"> vs </p>
+            <span class="challenger-2-name capital-winner-card-names">CHALLENGER 1 NAME</span>
+       </div>
+      <div class="winner-card-middle-third">
+          <span class="bold-winner-name"><strong>WINNER NAME</strong>WINNER</span>
+      </div>
+      <div class="winner-card-bottom-third">
+          <span class="number-guesses">100</span><p>GUESSES</p>
+            <!-- <p class="guesses">GUESSES</p> -->
+            <!-- paragraph then span inside paragraph? -->
           <span class="number-minutes">5</span>
-          MINUTES
-          </p>
+            <p class="minutes">MINUTES</p>
           <input class="button" type="button" name="update-button" value="x" />
+     </div>
         </article>
-      </section>
+        </section>
   </body>
 </html>
 
