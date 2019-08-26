@@ -1,5 +1,5 @@
 * {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -164,7 +164,12 @@ img {
 
 .name-and-guess-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+}
+
+.name-and-box {
+  width: 50%;
+  padding-right: 20%;
 }
 
 #score-box {
