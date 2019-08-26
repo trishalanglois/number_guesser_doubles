@@ -1,4 +1,3 @@
-//GETTING RANDOM NUMBER WITHIN GIVEN RANGE
 var min = 1;
 var max = 100;
 var randomNum = parseInt(Math.random() * (max - min) + min);
@@ -35,25 +34,28 @@ var errorChallenger2Guess = document.querySelector('#error-msg-challenger-2-gues
 
 var winnerCard = document.querySelector('.winner-card');
 
+var parseChallenger1 = parseInt(challenger1Guess.value);
+var parseChallenger2 = parseInt(challenger2Guess.value);
+
+var clearGameButton = document.querySelector('#clear-game-button');
+var leftSideBoxes = document.querySelector('.left-side-boxes');
+var leftSide = document.querySelector('left-side-cards');
+var clearGame = document.querySelectorAll('form');
+var inputForm = document.querySelectorAll('input-form-box');
+
 
 updateRangeButton.addEventListener('click', function() {
   newMinNum.innerText = userMinNum.value;
   newMaxNum.innerText = userMaxNum.value;
   var parseMin = parseInt(userMinNum.value);
   var parseMax = parseInt(userMaxNum.value);
-  randomNumGen(parseMin, parseMax)
+  randomNumGen(parseMin, parseMax);
+  disableButtons();
 });
 
+submitGuessButton.addEventListener('click', clickSubmit);
 
-
-function randomNumGen(min, max) {
-  randomNum = parseInt(Math.random() * (max - min) + min);
-  console.log(randomNum);
-};
-
-function disableButtons() {
-  enableButtons.disabled = true;
-};
+clearGameButton.addEventListener('click', clearGame);
 
 for (var i = 0; i < contentInForms.length; i++) {
   contentInForms[i].addEventListener('input', function() {
@@ -66,70 +68,74 @@ for (var i = 0; i < contentInForms.length; i++) {
 };
 
 
-//CHALLENGER'S NAME AND THE NUMER THEY WANT TO Guess, CHECKING FOR NUMERIC AND ALPHANUMERIC COMPATIBILITY
+function randomNumGen(min, max) {
+  randomNum = parseInt(Math.random() * (max - min) + min);
+  console.log(randomNum);
+};
 
-submitGuessButton.addEventListener('click', clickSubmit);
+function disableButtons() {
+  enableButtons.disabled = true;
+};
 
 function clickSubmit(){
   checkName1();
   checkName2();
   checkGuess1();
   checkGuess2();
+  updateNamesGuesses();
+  checkChallenger1Guess();
+  checkChallenger2Guess();
+};
 
+function clearGame() {
+  for (var i = 0; i < clearGame.length; i++) {
+    clearGame[i].reset();
+  }
+};
 function checkName1(){
   if (challenger1Name.value !== name) {
-    errorChallenger1Name.style.display = "inline";
+    errorChallenger1Name.style.display = 'inline';
   } else {
-    errorChallenger1Name.style.display = "none";
+    errorChallenger1Name.style.display = 'none';
   }
 };
-
 function checkName2(){
   if (challenger2Name.value !== name) {
-    errorChallenger2Name.style.display = "inline";
+    errorChallenger2Name.style.display = 'inline';
   } else {
-    errorChallenger2Name.style.display = "none";
+    errorChallenger2Name.style.display = 'none';
   }
 };
-
-
 function checkGuess1(){
   if (challenger1Guess.value !== number) {
-    errorChallenger1Guess.style.display = "inline";
+    errorChallenger1Guess.style.display = 'inline';
   } else {
-    errorChallenger1Guess.style.display = "none";
+    errorChallenger1Guess.style.display = 'none';
   }
 };
-
 function checkGuess2(){
   if (challenger2Guess.value !== number) {
-    errorChallenger2Guess.style.display = "inline";
+    errorChallenger2Guess.style.display = 'inline';
   } else {
-    errorChallenger2Guess.style.display = "none";
+    errorChallenger2Guess.style.display = 'none';
   }
 };
-
-
-
-
+function updateNamesGuesses() {
   challenger1UpdatedName.innerText = challenger1Name.value;
   challenger2UpdatedName .innerText = challenger2Name.value;
   challenger1PinkGuess.innerText = challenger1Guess.value;
   challenger2PinkGuess.innerText = challenger2Guess.value;
-
-  //change guesses to parsed values
-  var parseChallenger1 = parseInt(challenger1Guess.value);
-  var parseChallenger2 = parseInt(challenger2Guess.value);
-
-  // Update Latest Score Challenger 1 high/low
+};
+function checkChallenger1Guess() {
   if (parseChallenger1 > randomNum) {
     guessFeedbackMessage1.innerText = "That's too high!"
   } else if (parseChallenger1 < randomNum) {
     guessFeedbackMessage1.innerText = "That's too low!"
   } else {
     guessFeedbackMessage1.innerText = 'BOOM!'
-  };
-  // Update Latest Score Challenger 2 high/low
+  }
+};
+function checkChallenger2Guess() {
   if (parseChallenger2 > randomNum) {
     guessFeedbackMessage2.innerText = "That's too high!"
   } else if (parseChallenger2 < randomNum) {
@@ -138,27 +144,4 @@ function checkGuess2(){
     guessFeedbackMessage2.innerText = 'BOOM!';
     winnerCard.style.display === 'block';
   }
-
 };
-
-//CLEAR GAME BUTTON FUNCTIONALITY
-var clearGameButton = document.querySelector('#clear-game-button');
-var leftSideBoxes = document.querySelector('.left-side-boxes');
-var leftSide = document.querySelector('left-side-cards');
-var clearGame = document.querySelectorAll('form');
-var inputForm = document.querySelectorAll('input-form-box');
-
-// function clearButtonDisable() {
-//   if (clearGame.value == '') {
-//     clearGameButton.disabled = false;
-//   } else {
-//   clearGameButton.disabled = true;
-//   }
-// };
-
-clearGameButton.addEventListener('click', function() {
-  // console.log('hi');
-  for (var i = 0; i < clearGame.length; i++) {
-    clearGame[i].reset();
-  }
-});
