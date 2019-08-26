@@ -1,5 +1,5 @@
 * {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -109,6 +109,23 @@ h3 {
   width: 100%;
 }
 
+.error-msg-wrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+img {
+  width: .8em;
+  height: .8em;
+}
+
+.error-msg {
+    color: #DD1972;
+    font-size: .7em;
+    margin: 0;
+    /* display: none; */
+}
+
 .name-guess-display {
   width: 50%;
 }
@@ -148,12 +165,6 @@ h3 {
 .name-and-guess-wrapper {
   display: flex;
   justify-content: space-around;
-}
-
-.name-error-msg {
-  color: #DD1972;
-  font-size: .5em;
-  display: none;
 }
 
 #score-box {

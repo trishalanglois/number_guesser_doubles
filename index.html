@@ -44,16 +44,18 @@
           <h3>Challenger 1</h3>
 
           <div class="name-and-guess-wrapper">
+
             <div class="name-and-box">
               <p class="light-form-text name-guess-display">
                 Name
               </p>
               <input class="input-form-box challenger-name-input" id="challenger-1-name-input" />
+              <div class="error-msg-wrapper">
+                <img src="images/error-icon.svg" alt="pink error icon">
+                <p class="error-msg">Enter a name</p>
+              </div>
             </div>
-            <div class="name-error-msg">
-              <img src=>
-              Enter a name
-            </div>
+
 
             <div>
               <p class="light-form-text name-guess-display">
@@ -72,8 +74,6 @@
               </p>
               <input class="input-form-box challenger-name-input" id="challenger-2-name-input" />
               <div class="name-error-msg">
-                <img src=>
-                Enter a name
               </div>
             </div>
 
@@ -88,7 +88,7 @@
           <div id='three-button-wrapper'>
             <input class="button" id="submit-guess-button" type="button" name="update-button" value="SUBMIT GUESS" />
             <input class="button disable-button" type="reset" name="update-button" value="RESET GAME" />
-            <input class="button disable-button" id="clear-game-button" type="button" name="update-button" value="CLEAR GAME" disabled/>
+            <input class="button disable-button" id="clear-game-button" type="button" name="update-button" value="CLEAR GAME" disabled />
           </div>
         </form>
 

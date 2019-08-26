@@ -24,7 +24,7 @@ updateRangeButton.addEventListener('click', function() {
 });
 
 //DISABLE/ENABLE RESET AND CLEAR BUTTONS -- look over this again
-var enableButtons = document.querySelectorAll('.disable-button'); // [].classList
+var enableButtons = document.querySelectorAll('.disable-button'); //
 var contentInForms = document.querySelectorAll('.input-form-box');
 
 function disableButtons() {
@@ -65,17 +65,17 @@ submitGuessButton.addEventListener('click', function (){
 // check challenger1Name == alphanumeric
   if (challenger1Name.value !== name) {
     console.log('not a name');
-    //show name error message under challenger 1//
+    //show name error message under challenger 1// -- USE WORD RETURN FOR ERROR
   }
   if (challenger1Guess.value !== numbers) {
     console.log('not a number');
-    //show number error message under guess 1
+    //show number error message under guess 1 -- USE WORD RETURN FOR ERROR
   }
   if (challenger2Name.value !== name) {
-    //show name error message under challenger 2
+    //show name error message under challenger 2 -- USE WORD RETURN FOR ERROR
   }
   if (challenger2Guess.value !== numbers) {
-    //show number error message under guess 2
+    //show number error message under guess 2 -- USE WORD RETURN FOR ERROR
   }
 
   challenger1UpdatedName.innerText = challenger1Name.value;
@@ -122,7 +122,7 @@ var inputForm = document.querySelectorAll('input-form-box');
 // };
 
 clearGameButton.addEventListener('click', function() {
-  console.log('hi');
+  // console.log('hi');
   for (var i = 0; i < clearGame.length; i++) {
     clearGame[i].reset();
   }
