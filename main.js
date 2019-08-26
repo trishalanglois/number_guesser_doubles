@@ -41,8 +41,6 @@ for (var i = 0; i < contentInForms.length; i++) {
   enableButtons.disabled = false;
 };
 
-
-
 //CHALLENGER'S NAME AND THE NUMER THEY WANT TO Guess, CHECKING FOR NUMERIC AND ALPHANUMERIC COMPATIBILITY
 var name = /^[0-9a-zA-Z]+$/;
 var numbers = /^[0-9]+$/;
@@ -60,17 +58,25 @@ var challenger2PinkGuess = document.querySelector('#challenger-2-number-guess');
 var guessFeedbackMessage1 = document.querySelector('#challenger-1-message-guess');
 var guessFeedbackMessage2 = document.querySelector('#challenger-2-message-guess');
 
+
 submitGuessButton.addEventListener('click', function (){
   // Refactor: For each challenger, check for alpha/numeric values, update name, current guess, and show msg if too high or too low
 
 // check challenger1Name == alphanumeric
-// if not, show error
-// check challenger1Guess == numeric
-// if not, show error
-// check challenger2Name == alphanumeric
-// if not, show error
-// check challenger1Guess == numeric
-// if not, show error
+  if (challenger1Name.value !== name) {
+    console.log('not a name');
+    //show name error message under challenger 1//
+  }
+  if (challenger1Guess.value !== numbers) {
+    console.log('not a number');
+    //show number error message under guess 1
+  }
+  if (challenger2Name.value !== name) {
+    //show name error message under challenger 2
+  }
+  if (challenger2Guess.value !== numbers) {
+    //show number error message under guess 2
+  }
 
   challenger1UpdatedName.innerText = challenger1Name.value;
   challenger2UpdatedName .innerText = challenger2Name.value;
