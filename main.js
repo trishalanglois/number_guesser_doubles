@@ -23,6 +23,26 @@ updateRangeButton.addEventListener('click', function() {
   randomNumGen(parseMin, parseMax)
 });
 
+//DISABLE/ENABLE RESET AND CLEAR BUTTONS -- look over this again
+var enableButtons = document.querySelectorAll('.disable-button'); // [].classList
+var contentInForms = document.querySelectorAll('.input-form-box');
+
+function disableButtons() {
+  enableButtons.disabled = true;
+};
+
+for (var i = 0; i < contentInForms.length; i++) {
+  contentInForms[i].addEventListener('input', function() {
+    for (var j = 0; j < enableButtons.length; j++) {
+      enableButtons[j].disabled = false;
+      enableButtons[j].classList.remove('disable-button');
+    }
+  });
+  enableButtons.disabled = false;
+};
+
+
+
 //CHALLENGER'S NAME AND THE NUMER THEY WANT TO Guess, CHECKING FOR NUMERIC AND ALPHANUMERIC COMPATIBILITY
 var name = /^[0-9a-zA-Z]+$/;
 var numbers = /^[0-9]+$/;
@@ -80,21 +100,20 @@ submitGuessButton.addEventListener('click', function (){
 
 });
 
-//CLEAR GAME BUTTON FUNCTIONALITY -- not working!
+//CLEAR GAME BUTTON FUNCTIONALITY
 var clearGameButton = document.querySelector('#clear-game-button');
 var leftSideBoxes = document.querySelector('.left-side-boxes');
 var leftSide = document.querySelector('left-side-cards');
 var clearGame = document.querySelectorAll('form');
 var inputForm = document.querySelectorAll('input-form-box');
 
-function clearButtonDisable() {
-  if (clearGame.value == '') {
-    clearGameButton.disabled = false;
-  } else {
-  clearGameButton.disabled = true;
-  }
-};
-
+// function clearButtonDisable() {
+//   if (clearGame.value == '') {
+//     clearGameButton.disabled = false;
+//   } else {
+//   clearGameButton.disabled = true;
+//   }
+// };
 
 clearGameButton.addEventListener('click', function() {
   console.log('hi');
