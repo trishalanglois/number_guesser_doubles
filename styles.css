@@ -119,15 +119,16 @@ img {
   height: .8em;
 }
 
-.error-msg-wrapper {
+/* .error-msg-wrapper {
   display: none;
-}
+} */
 
 .error-msg {
     color: #DD1972;
     font-size: .7em;
     margin: 0;
     padding-left: .7em;
+    display: none;
 }
 
 .name-guess-display {
