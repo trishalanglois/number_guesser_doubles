@@ -1,16 +1,13 @@
 var min = 1;
 var max = 100;
 var randomNum = parseInt(Math.random() * (max - min) + min);
-
 var userMinNum = document.getElementById('user-min-number');
 var newMinNum = document.getElementById('min-number-from-form');
 var userMaxNum = document.getElementById('user-max-num');
 var newMaxNum = document.getElementById('max-number-from-form');
 var updateRangeButton = document.getElementById('button-min-max-range-box');
-
 var enableButtons = document.querySelectorAll('.disable-button'); //
 var contentInForms = document.querySelectorAll('.input-form-box');
-
 var name = /^[0-9a-zA-Z]+$/;
 var number = /^[0-9]+$/;
 var submitGuessButton = document.getElementById('submit-guess-button');
@@ -18,31 +15,24 @@ var challenger1Name = document.getElementById('challenger-1-name-input');
 var challenger1UpdatedName = document.querySelector('.challenger-1-input-display');
 var challenger1PinkGuess = document.querySelector('#challenger-1-number-guess');
 var challenger1Guess = document.getElementById('challenger-1-guess');
-
 var challenger2Name = document.getElementById('challenger-2-name-input');
 var challenger2UpdatedName = document.querySelector('.challenger-2-input-display');
 var challenger2Guess = document.querySelector('#challenger-2-guess');
 var challenger2PinkGuess = document.querySelector('#challenger-2-number-guess');
-
 var guessFeedbackMessage1 = document.querySelector('#challenger-1-message-guess');
 var guessFeedbackMessage2 = document.querySelector('#challenger-2-message-guess');
-
 var errorChallenger1Name = document.querySelector('#error-msg-challenger-1-name');
 var errorChallenger1Guess = document.querySelector('#error-msg-challenger-1-guess');
 var errorChallenger2Name = document.querySelector('#error-msg-challenger-2-name');
 var errorChallenger2Guess = document.querySelector('#error-msg-challenger-2-guess');
-
 var winnerCard = document.querySelector('.winner-card');
-
 var parseChallenger1 = parseInt(challenger1Guess.value);
 var parseChallenger2 = parseInt(challenger2Guess.value);
-
 var clearGameButton = document.querySelector('#clear-game-button');
 var leftSideBoxes = document.querySelector('.left-side-boxes');
 var leftSide = document.querySelector('left-side-cards');
 var clearGame = document.querySelectorAll('form');
 var inputForm = document.querySelectorAll('input-form-box');
-
 
 updateRangeButton.addEventListener('click', function() {
   newMinNum.innerText = userMinNum.value;
