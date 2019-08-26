@@ -58,6 +58,10 @@ var challenger2PinkGuess = document.querySelector('#challenger-2-number-guess');
 var guessFeedbackMessage1 = document.querySelector('#challenger-1-message-guess');
 var guessFeedbackMessage2 = document.querySelector('#challenger-2-message-guess');
 
+var errorChallenger1Name = document.querySelector('#error-msg-challenger-1-name');
+var errorChallenger1Guess = document.querySelector('#error-msg-challenger-1-guess');
+var errorChallenger2Name = document.querySelector('#error-msg-challenger-2-name');
+var errorChallenger2Guess = document.querySelector('#error-msg-challenger-2-guess');
 
 submitGuessButton.addEventListener('click', function (){
   // Refactor: For each challenger, check for alpha/numeric values, update name, current guess, and show msg if too high or too low
@@ -65,6 +69,7 @@ submitGuessButton.addEventListener('click', function (){
 // check challenger1Name == alphanumeric
   if (challenger1Name.value !== name) {
     console.log('not a name');
+    errorChallenger1Name.style.display = "inline";
     //show name error message under challenger 1// -- USE WORD RETURN FOR ERROR
   }
   if (challenger1Guess.value !== numbers) {
