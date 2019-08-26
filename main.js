@@ -68,20 +68,23 @@ submitGuessButton.addEventListener('click', function (){
 
 // check challenger1Name == alphanumeric
   if (challenger1Name.value !== name) {
-    console.log('not a name');
+    // console.log('not a name');
     errorChallenger1Name.style.display = "inline";
     //show name error message under challenger 1// -- USE WORD RETURN FOR ERROR
   }
   if (challenger1Guess.value !== numbers) {
-    console.log('not a number');
+    // console.log('not a number');
+    errorChallenger1Guess.style.display = "inline";
     //show number error message under guess 1 -- USE WORD RETURN FOR ERROR
   }
   if (challenger2Name.value !== name) {
+    errorChallenger2Name.style.display = "inline";
     //show name error message under challenger 2 -- USE WORD RETURN FOR ERROR
   }
   if (challenger2Guess.value !== numbers) {
+    errorChallenger2Guess.style.display = "inline";
     //show number error message under guess 2 -- USE WORD RETURN FOR ERROR
-  }
+  };
 
   challenger1UpdatedName.innerText = challenger1Name.value;
   challenger2UpdatedName .innerText = challenger2Name.value;
