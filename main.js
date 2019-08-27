@@ -37,6 +37,8 @@ var leftSide = document.querySelector('left-side-cards');
 var clearGame = document.querySelectorAll('form');
 var inputForm = document.querySelectorAll('input-form-box');
 
+var aside = document.querySelector('#right-aside')
+
 
 updateRangeButton.addEventListener('click', function() {
   newMinNum.innerText = userMinNum.value;
@@ -106,7 +108,6 @@ function clickSubmit(){
   updateNamesGuesses();
   checkChallenger1Guess(); // refactor these to use parseChallenger1 and 2 as parameters
   checkChallenger2Guess();
-  showWinnerCard();
 };
 
 function clearGame() {
@@ -149,6 +150,44 @@ function updateNamesGuesses() {
   challenger1PinkGuess.innerText = challenger1Guess.value;
   challenger2PinkGuess.innerText = challenger2Guess.value;
 };
+
+function showWinnerCard () {
+  aside.innerHTML += `
+  <article class="winner-card">
+    <div id="challenger-1-vs-challenger-2-wrapper">
+      <p class="challenger-1-name-input-display bold-score-box-text">
+        Challenger 1 Name
+      </p>
+      <p class="light-form-text">
+        vs
+      </p>
+      <p class="challenger-2-name-input-display bold-score-box-text">
+        Challenger 2 Name
+      </p>
+    </div>
+    <div id="winner-name-and-winner">
+      <div class="grey-horizontal-lines"></div>
+      <p class="bold-winner-name">
+        WINNER NAME
+      </p>
+      <p class="winner-card-winner">
+        WINNER
+      </p>
+      <div class="grey-horizontal-lines"></div>
+    </div>
+    <div id="guesses-minutes-button-wrapper">
+      <p class="number-of-guesses-statement">
+        <span class="number-guesses bold-score-box-text">100</span>
+        <span class="light-form-text">GUESSES</span>
+      </p>
+      <p class="number-of-minutes-statement">
+        <span class="number-minutes bold-score-box-text">5</span>
+        <span class="light-form-text">MINUTES</span>
+      </p>
+      <input class="button" type="button" name="update-button" value="X" />
+    </div>`;
+  };
+
 function checkChallenger1Guess(parseChallenger1) {
   var parseChallenger1 = parseInt(challenger1Guess.value);
   console.log(parseChallenger1);
@@ -158,7 +197,8 @@ function checkChallenger1Guess(parseChallenger1) {
   } else if (parseChallenger1 < randomNum) {
     guessFeedbackMessage1.innerText = "That's too low!"
   } else {
-    guessFeedbackMessage1.innerText = 'BOOM!'
+    guessFeedbackMessage1.innerText = 'BOOM!';
+    showWinnerCard();
   }
 };
 function checkChallenger2Guess() {
@@ -170,48 +210,7 @@ function checkChallenger2Guess() {
     guessFeedbackMessage2.innerText = "That's too low!"
   } else {
     guessFeedbackMessage2.innerText = 'BOOM!';
-    winnerCard.style.display === 'block';
-  }
-};
-
-function showWinnerCard() {
-  if (parseChallenger1 === randomNum) {
-    aside.innerHTML += `<article class="winner-card">
-      <div id="challenger-1-vs-challenger-2-wrapper">
-        <p class="challenger-1-name-input-display bold-score-box-text">
-          Challenger 1 Name
-        </p>
-        <p class="light-form-text">
-          vs
-        </p>
-        <p class="challenger-2-name-input-display bold-score-box-text">
-          Challenger 2 Name
-        </p>
-      </div>
-
-      <div id="winner-name-and-winner">
-        <div class="grey-horizontal-lines"></div>
-        <p class="bold-winner-name">
-          WINNER NAME
-        </p>
-        <p class="winner-card-winner">
-          WINNER
-        </p>
-        <div class="grey-horizontal-lines"></div>
-      </div>
-
-      <div id="guesses-minutes-button-wrapper">
-        <p class="number-of-guesses-statement">
-          <span class="number-guesses bold-score-box-text">100</span>
-          <span class="light-form-text">GUESSES</span>
-        </p>
-
-        <p class="number-of-minutes-statement">
-          <span class="number-minutes bold-score-box-text">5</span>
-          <span class="light-form-text">MINUTES</span>
-        </p>
-
-        <input class="button" type="button" name="update-button" value="X" />
-      </div>`
-  }
+    // winnerCard.style.display === 'block';
+    showWinnerCard();
+  };
 }
