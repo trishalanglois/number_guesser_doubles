@@ -53,6 +53,8 @@ submitGuessButton.addEventListener('click', clickSubmit);
 
 clearGameButton.addEventListener('click', clearGame);
 
+aside.addEventListener('click', deleteWinnerCard);
+
 for (var i = 0; i < contentInForms.length; i++) {
   contentInForms[i].addEventListener('input', function() {
     for (var j = 0; j < enableButtons.length; j++) {
@@ -184,11 +186,11 @@ function showWinnerCard () {
         <span class="number-minutes bold-score-box-text">5</span>
         <span class="light-form-text">MINUTES</span>
       </p>
-      <input class="button" type="button" name="update-button" value="X" />
+      <input class="button delete-card" type="button" name="update-button" value="X" />
     </div>`;
   };
 
-function checkChallenger1Guess(parseChallenger1) {
+function checkChallenger1Guess() {
   var parseChallenger1 = parseInt(challenger1Guess.value);
   console.log(parseChallenger1);
   // console.log(randomNum);
@@ -196,7 +198,7 @@ function checkChallenger1Guess(parseChallenger1) {
     guessFeedbackMessage1.innerText = "That's too high!"
   } else if (parseChallenger1 < randomNum) {
     guessFeedbackMessage1.innerText = "That's too low!"
-  } else {
+  } else if (parseChallenger1 === randomNum){
     guessFeedbackMessage1.innerText = 'BOOM!';
     showWinnerCard();
   }
@@ -208,9 +210,16 @@ function checkChallenger2Guess() {
     guessFeedbackMessage2.innerText = "That's too high!"
   } else if (parseChallenger2 < randomNum) {
     guessFeedbackMessage2.innerText = "That's too low!"
-  } else {
+  } else if (parseChallenger2 === randomNum){
     guessFeedbackMessage2.innerText = 'BOOM!';
     // winnerCard.style.display === 'block';
     showWinnerCard();
   };
 }
+
+function deleteWinnerCard(event) {
+  var winnerCard = document.querySelector('.winner-card');
+  if (event.target.classList.contains("delete-card")) {
+    event.target.closest('article').remove();
+  }
+};
