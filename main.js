@@ -83,28 +83,30 @@ function clearGame() {
   }
 };
 function checkName1(){
-  if (challenger1Name.value !== name) {
+  if (challenger1Name.value.match(name)) {
     errorChallenger1Name.style.display = 'inline';
   } else {
     errorChallenger1Name.style.display = 'none';
   }
 };
 function checkName2(){
-  if (challenger2Name.value !== name) {
+  if (challenger2Name.value.match(name)) {
     errorChallenger2Name.style.display = 'inline';
   } else {
     errorChallenger2Name.style.display = 'none';
   }
 };
 function checkGuess1(){
-  if (challenger1Guess.value !== number) {
+  console.log(parseChallenger1);
+  // if (challenger1Guess.value.match(number)) {
+  if (parseChallenger1.value.match(number)) {
     errorChallenger1Guess.style.display = 'inline';
   } else {
     errorChallenger1Guess.style.display = 'none';
   }
 };
 function checkGuess2(){
-  if (challenger2Guess.value !== number) {
+  if (challenger2Guess.value.match(number)) {
     errorChallenger2Guess.style.display = 'inline';
   } else {
     errorChallenger2Guess.style.display = 'none';
@@ -117,6 +119,8 @@ function updateNamesGuesses() {
   challenger2PinkGuess.innerText = challenger2Guess.value;
 };
 function checkChallenger1Guess() {
+  console.log(parseChallenger1);
+  console.log(randomNum);
   if (parseChallenger1 > randomNum) {
     guessFeedbackMessage1.innerText = "That's too high!"
   } else if (parseChallenger1 < randomNum) {
