@@ -106,6 +106,7 @@ function clickSubmit(){
   updateNamesGuesses();
   checkChallenger1Guess(); // refactor these to use parseChallenger1 and 2 as parameters
   checkChallenger2Guess();
+  showWinnerCard();
 };
 
 function clearGame() {
@@ -172,3 +173,45 @@ function checkChallenger2Guess() {
     winnerCard.style.display === 'block';
   }
 };
+
+function showWinnerCard() {
+  if (parseChallenger1 === randomNum) {
+    aside.innerHTML += `<article class="winner-card">
+      <div id="challenger-1-vs-challenger-2-wrapper">
+        <p class="challenger-1-name-input-display bold-score-box-text">
+          Challenger 1 Name
+        </p>
+        <p class="light-form-text">
+          vs
+        </p>
+        <p class="challenger-2-name-input-display bold-score-box-text">
+          Challenger 2 Name
+        </p>
+      </div>
+
+      <div id="winner-name-and-winner">
+        <div class="grey-horizontal-lines"></div>
+        <p class="bold-winner-name">
+          WINNER NAME
+        </p>
+        <p class="winner-card-winner">
+          WINNER
+        </p>
+        <div class="grey-horizontal-lines"></div>
+      </div>
+
+      <div id="guesses-minutes-button-wrapper">
+        <p class="number-of-guesses-statement">
+          <span class="number-guesses bold-score-box-text">100</span>
+          <span class="light-form-text">GUESSES</span>
+        </p>
+
+        <p class="number-of-minutes-statement">
+          <span class="number-minutes bold-score-box-text">5</span>
+          <span class="light-form-text">MINUTES</span>
+        </p>
+
+        <input class="button" type="button" name="update-button" value="X" />
+      </div>`
+  }
+}
