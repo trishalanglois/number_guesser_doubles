@@ -109,6 +109,28 @@ h3 {
   width: 100%;
 }
 
+.error-msg-wrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+img {
+  width: .8em;
+  height: .8em;
+}
+
+/* .error-msg-wrapper {
+  display: none;
+} */
+
+.error-msg {
+    color: #DD1972;
+    font-size: .7em;
+    margin: 0;
+    padding-left: .7em;
+    display: none;
+}
+
 .name-guess-display {
   width: 50%;
 }
@@ -147,13 +169,12 @@ h3 {
 
 .name-and-guess-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
-.name-error-msg {
-  color: #DD1972;
-  font-size: .5em;
-  display: none;
+.name-and-box {
+  width: 50%;
+  padding-right: 20%;
 }
 
 #score-box {
@@ -205,6 +226,7 @@ aside {
   width: 90%;
   margin: .5em;
   border: 1px solid #6E6E6E;
+  display: none;
 }
 
 #challenger-1-vs-challenger-2-wrapper {
