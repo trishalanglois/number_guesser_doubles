@@ -40,7 +40,7 @@
 
         <form class="left-side-cards">
 
-          <p class="light-form-text" id="the-current-range-text">The Current Range is <span class="range-numbers" id="min-number-from-form">1</span> to <span class="range-numbers" id="max-number-from-form">100</span></span>
+          <p class="light-form-text" id="the-current-range-text">The Current Range is <span class="range-numbers form" id="min-number-from-form">1</span> to <span class="range-numbers form" id="max-number-from-form">100</span></span>
           <h3>Challenger 1</h3>
 
           <div class="name-and-guess-wrapper">
@@ -87,8 +87,8 @@
 
           <div id='three-button-wrapper'>
             <input class="button" id="submit-guess-button" type="button" name="update-button" value="SUBMIT GUESS" />
-            <input class="button" type="reset" name="update-button" value="RESET GAME" />
-            <input class="button" id="clear-game-button" type="button" name="update-button" value="CLEAR GAME" disabled=""/>
+            <input class="button disable-button" type="reset" name="update-button" value="RESET GAME" />
+            <input class="button disable-button" id="clear-game-button" type="button" name="update-button" value="CLEAR GAME" disabled/>
           </div>
         </form>
 
@@ -122,7 +122,7 @@
                 <p class="big-pink-current-guess" id="challenger-2-number-guess">
                   3
                 </p>
-                <p class="light-medium-score-box-text">
+                <p class="light-medium-score-box-text" id="challenger-2-message-guess">
                   high/low msg
                 </p>
               </span>
