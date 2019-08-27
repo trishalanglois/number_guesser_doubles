@@ -58,9 +58,35 @@ for (var i = 0; i < contentInForms.length; i++) {
       enableButtons[j].classList.remove('disable-button');
     }
   });
-  enableButtons.disabled = false;
 };
 
+// contentInForms[0].addEventListener('input', function(){
+//   enableButtons[0].disabled = false;
+//   enableButtons[1].disabled = false;
+//   enableButtons[0].classList.remove('disable-button');
+//   enableButtons[1].classList.remove('disable-button');
+// });
+//
+// contentInForms[1].addEventListener('input', function(){
+//   enableButtons[0].disabled = false;
+//   enableButtons[1].disabled = false;
+//   enableButtons[0].classList.remove('disable-button');
+//   enableButtons[1].classList.remove('disable-button');
+// });
+//
+// contentInForms[2].addEventListener('input', function(){
+//   enableButtons[0].disabled = false;
+//   enableButtons[1].disabled = false;
+//   enableButtons[0].classList.remove('disable-button');
+//   enableButtons[1].classList.remove('disable-button');
+// });
+//
+// contentInForms[3].addEventListener('input', function(){
+//   enableButtons[0].disabled = false;
+//   enableButtons[1].disabled = false;
+//   enableButtons[0].classList.remove('disable-button');
+//   enableButtons[1].classList.remove('disable-button');
+// });
 
 function randomNumGen(min, max) {
   randomNum = parseInt(Math.random() * (max - min) + min);
