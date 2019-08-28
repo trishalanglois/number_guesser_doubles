@@ -39,6 +39,8 @@ var guessBoxes = document.querySelectorAll('.guess-box');
 var userParseMin;
 var userParseMax;
 
+var rangeErrorMsg = document.querySelector('#range-error-msg');
+
 updateRangeButton.addEventListener('click', function() {
   newMinNum.innerText = userMinNum.value;
   newMaxNum.innerText = userMaxNum.value;
@@ -77,8 +79,8 @@ function disableButtons() {
 };
 
 function setRangeError() {
-  if userMinNum.value > userMaxNum.value {
-    
+  if (userMinNum.value > userMaxNum.value) {
+    rangeErrorMsg.style.display = 'inline'
   }
 }
 
