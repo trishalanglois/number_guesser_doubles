@@ -1,13 +1,11 @@
 var min = 1;
 var max = 100;
 var randomNum = parseInt(Math.random() * (max - min) + min);
-
 var userMinNum = document.getElementById('user-min-number');
 var newMinNum = document.getElementById('min-number-from-form');
 var userMaxNum = document.getElementById('user-max-num');
 var newMaxNum = document.getElementById('max-number-from-form');
 var updateRangeButton = document.getElementById('button-min-max-range-box');
-
 var enableButtons = document.querySelectorAll('.disable-button'); //
 var contentInForms = document.querySelectorAll('.input-form-box');
 var nameRegex = /^[0-9a-zA-Z]+$/;
@@ -21,15 +19,12 @@ var challenger2Name = document.getElementById('challenger-2-name-input');
 var challenger2Guess = document.querySelector('#challenger-2-guess');
 var challenger2UpdatedName = document.querySelector('.challenger-2-input-display');
 var challenger2PinkGuess = document.querySelector('#challenger-2-number-guess');
-
 var guessFeedbackMessage1 = document.querySelector('#challenger-1-message-guess');
 var guessFeedbackMessage2 = document.querySelector('#challenger-2-message-guess');
-
 var errorChallenger1Name = document.querySelector('#error-msg-challenger-1-name');
 var errorChallenger1Guess = document.querySelector('#error-msg-challenger-1-guess');
 var errorChallenger2Name = document.querySelector('#error-msg-challenger-2-name');
 var errorChallenger2Guess = document.querySelector('#error-msg-challenger-2-guess');
-
 var winnerCard = document.querySelector('.winner-card');
 var clearGameButton = document.querySelector('#clear-game-button');
 var leftSideBoxes = document.querySelector('.left-side-boxes');
