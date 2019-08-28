@@ -100,9 +100,23 @@ h3 {
   color: #6E6E6E;
 }
 
+/* .error-highlight: focus {
+
+  margin: 0px;
+  width: 100%;
+} */
+
 .input-form-box {
   margin: 0px;
   width: 100%;
+}
+
+.input-form-box:focus {
+  margin: 0px;
+  width: 100%;
+  border: 1px solid #DD1972;
+  box-shadow: 0 0 5px #DD1972;
+  outline: none;
 }
 
 .error-msg-wrapper {
@@ -139,6 +153,10 @@ img {
   height: 2em;
   margin-top: 1.25em;
   font-weight: bold;
+}
+
+.button:hover {
+  background-color: #DD1972;
 }
 
 .disable-button {

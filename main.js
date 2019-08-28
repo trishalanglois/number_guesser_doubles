@@ -35,6 +35,7 @@ var userMaxNum = document.getElementById('user-max-num');
 var userMinNum = document.getElementById('user-min-number');
 var userParseMax;
 var userParseMin;
+var userRangeNum = document.querySelectorAll('.user-range-num');
 var winnerCard = document.querySelector('.winner-card');
 
 aside.addEventListener('click', deleteWinnerCard);
@@ -159,8 +160,9 @@ function randomNumGen(min, max) {
   console.log(randomNum);
 };
 function setRangeError() {
-  if (userMinNum.value < userMaxNum.value) {
-    rangeErrorMsg.style.display = 'inline'
+  if (userMinNum.value > userMaxNum.value) {
+    rangeErrorMsg.style.display = 'inline';
+    userRangeNum.style.border = '1px solid #DD1972';
   } else {
     rangeErrorMsg.style.display = 'none'
   }
