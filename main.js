@@ -37,6 +37,8 @@ var leftSide = document.querySelector('left-side-cards');
 var clearGame = document.querySelectorAll('form');
 var inputForm = document.querySelectorAll('input-form-box');
 
+var aside = document.querySelector('#right-aside')
+
 
 updateRangeButton.addEventListener('click', function() {
   newMinNum.innerText = userMinNum.value;
@@ -50,6 +52,8 @@ updateRangeButton.addEventListener('click', function() {
 submitGuessButton.addEventListener('click', clickSubmit);
 
 clearGameButton.addEventListener('click', clearGame);
+
+aside.addEventListener('click', deleteWinnerCard);
 
 for (var i = 0; i < contentInForms.length; i++) {
   contentInForms[i].addEventListener('input', function() {
@@ -148,7 +152,45 @@ function updateNamesGuesses() {
   challenger1PinkGuess.innerText = challenger1Guess.value;
   challenger2PinkGuess.innerText = challenger2Guess.value;
 };
-function checkChallenger1Guess(parseChallenger1) {
+
+function showWinnerCard () {
+  aside.innerHTML += `
+  <article class="winner-card">
+    <div id="challenger-1-vs-challenger-2-wrapper">
+      <p class="challenger-1-name-input-display bold-score-box-text">
+        Challenger 1 Name
+      </p>
+      <p class="light-form-text">
+        vs
+      </p>
+      <p class="challenger-2-name-input-display bold-score-box-text">
+        Challenger 2 Name
+      </p>
+    </div>
+    <div id="winner-name-and-winner">
+      <div class="grey-horizontal-lines"></div>
+      <p class="bold-winner-name">
+        WINNER NAME
+      </p>
+      <p class="winner-card-winner">
+        WINNER
+      </p>
+      <div class="grey-horizontal-lines"></div>
+    </div>
+    <div id="guesses-minutes-button-wrapper">
+      <p class="number-of-guesses-statement">
+        <span class="number-guesses bold-score-box-text">100</span>
+        <span class="light-form-text">GUESSES</span>
+      </p>
+      <p class="number-of-minutes-statement">
+        <span class="number-minutes bold-score-box-text">5</span>
+        <span class="light-form-text">MINUTES</span>
+      </p>
+      <input class="button delete-card" type="button" name="update-button" value="X" />
+    </div>`;
+  };
+
+function checkChallenger1Guess() {
   var parseChallenger1 = parseInt(challenger1Guess.value);
   console.log(parseChallenger1);
   // console.log(randomNum);
@@ -156,8 +198,9 @@ function checkChallenger1Guess(parseChallenger1) {
     guessFeedbackMessage1.innerText = "That's too high!"
   } else if (parseChallenger1 < randomNum) {
     guessFeedbackMessage1.innerText = "That's too low!"
-  } else {
-    guessFeedbackMessage1.innerText = 'BOOM!'
+  } else if (parseChallenger1 === randomNum){
+    guessFeedbackMessage1.innerText = 'BOOM!';
+    showWinnerCard();
   }
 };
 function checkChallenger2Guess() {
@@ -167,8 +210,16 @@ function checkChallenger2Guess() {
     guessFeedbackMessage2.innerText = "That's too high!"
   } else if (parseChallenger2 < randomNum) {
     guessFeedbackMessage2.innerText = "That's too low!"
-  } else {
+  } else if (parseChallenger2 === randomNum){
     guessFeedbackMessage2.innerText = 'BOOM!';
-    winnerCard.style.display === 'block';
+    // winnerCard.style.display === 'block';
+    showWinnerCard();
+  };
+}
+
+function deleteWinnerCard(event) {
+  var winnerCard = document.querySelector('.winner-card');
+  if (event.target.classList.contains("delete-card")) {
+    event.target.closest('article').remove();
   }
 };
