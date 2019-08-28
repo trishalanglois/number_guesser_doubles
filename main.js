@@ -36,14 +36,17 @@ var aside = document.querySelector('#right-aside')
 var resetButton = document.querySelector('#reset-button');
 var guessBoxes = document.querySelectorAll('.guess-box');
 
+var userParseMin;
+var userParseMax;
 
 updateRangeButton.addEventListener('click', function() {
   newMinNum.innerText = userMinNum.value;
   newMaxNum.innerText = userMaxNum.value;
-  var parseMin = parseInt(userMinNum.value);
-  var parseMax = parseInt(userMaxNum.value);
-  randomNumGen(parseMin, parseMax);
+  userParseMin = parseInt(userMinNum.value);
+  userParseMax = parseInt(userMaxNum.value);
+  randomNumGen(userParseMin, userParseMax);
   disableButtons();
+  setRangeError();
 });
 
 submitGuessButton.addEventListener('click', clickSubmit);
@@ -51,6 +54,8 @@ submitGuessButton.addEventListener('click', clickSubmit);
 clearGameButton.addEventListener('click', clearGameFunc);
 
 aside.addEventListener('click', deleteWinnerCard);
+
+resetButton.addEventListener('click', clearGuesses);
 
 for (var i = 0; i < contentInForms.length; i++) {
   contentInForms[i].addEventListener('input', function() {
@@ -60,8 +65,6 @@ for (var i = 0; i < contentInForms.length; i++) {
     }
   });
 };
-
-resetButton.addEventListener('click', clearGuesses);
 
 function randomNumGen(min, max) {
   randomNum = parseInt(Math.random() * (max - min) + min);
@@ -73,6 +76,12 @@ function disableButtons() {
   enableButtons.disabled = true;
 };
 
+function setRangeError() {
+  if userMinNum.value > userMaxNum.value {
+    
+  }
+}
+
 function clearGuesses() {
   for (var i = 0; i < guessBoxes.length; i++) {
     guessBoxes[i].value = '';
@@ -80,13 +89,15 @@ function clearGuesses() {
 }
 
 function clickSubmit(){
+  checkRange1();
   checkName1();
   checkName2();
   checkGuess1();
   checkGuess2();
   updateNamesGuesses();
-  checkChallenger1Guess(); // refactor these to use parseChallenger1 and 2 as parameters
+  checkChallenger1Guess();
   checkChallenger2Guess();
+  checkRange2();
 };
 
 function clearGameFunc() {
@@ -119,6 +130,20 @@ function checkGuess1(){
     errorChallenger1Guess.style.display = 'inline';
   }
 };
+
+function checkRange1() {
+  if (challenger1Guess.value > userParseMax || challenger1Guess.value < userParseMin) {
+    errorChallenger1Guess.style.display = 'inline';
+  }
+};
+
+function checkRange2() {
+  if (challenger2Guess.value > userParseMax || challenger2Guess.value < userParseMin) {
+    errorChallenger2Guess.style.display = 'inline';
+  }
+};
+
+
 function checkGuess2(){
   if (challenger2Guess.value.match(number)) {
     errorChallenger2Guess.style.display = 'none';
@@ -183,6 +208,7 @@ function checkChallenger1Guess() {
     showWinnerCard();
   }
 };
+
 function checkChallenger2Guess() {
   var parseChallenger2 = parseInt(challenger2Guess.value);
   // console.log(parseChallenger2);
