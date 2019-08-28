@@ -53,7 +53,6 @@ for (var i = 0; i < contentInForms.length; i++) {
 };
 function checkChallenger1Guess() {
   var parseChallenger1 = parseInt(challenger1Guess.value);
-  console.log(parseChallenger1);
   if (parseChallenger1 > randomNum) {
     guessFeedbackMessage1.innerText = "That's too high!"
   } else if (parseChallenger1 < randomNum) {
@@ -65,14 +64,12 @@ function checkChallenger1Guess() {
 };
 function checkChallenger2Guess() {
   var parseChallenger2 = parseInt(challenger2Guess.value);
-  // console.log(parseChallenger2);
   if (parseChallenger2 > randomNum) {
     guessFeedbackMessage2.innerText = "That's too high!"
   } else if (parseChallenger2 < randomNum) {
     guessFeedbackMessage2.innerText = "That's too low!"
   } else if (parseChallenger2 === randomNum){
     guessFeedbackMessage2.innerText = 'BOOM!';
-    // winnerCard.style.display === 'block';
     showWinnerCard();
   };
 };
@@ -91,14 +88,12 @@ function checkGuess2(){
   }
 };
 function checkName1(){
-  console.log(challenger1Name.value);
   if (challenger1Name.value.match(nameRegex)) {
     errorChallenger1Name.style.display = 'none';
   } else {
     errorChallenger1Name.style.display = 'inline';
   }
 };
-
 function checkName2(){
   if (challenger2Name.value.match(nameRegex)) {
     errorChallenger2Name.style.display = 'none';
@@ -116,7 +111,6 @@ function checkRange2() {
     errorChallenger2Guess.style.display = 'inline';
   }
 };
-
 function clearGameFunc() {
   for (var i = 0; i < contentInForms.length; i++) {
     contentInForms[i].value = '';
@@ -126,13 +120,11 @@ function clearGameFunc() {
   newMinNum.innerText = 1;
   newMaxNum.innerText = 100;
 };
-
 function clearGuesses() {
   for (var i = 0; i < guessBoxes.length; i++) {
     guessBoxes[i].value = '';
   }
 };
-
 function clickUpdate() {
   newMinNum.innerText = userMinNum.value;
   newMaxNum.innerText = userMaxNum.value;
@@ -142,7 +134,6 @@ function clickUpdate() {
   disableButtons();
   setRangeError();
 };
-
 function clickSubmit(){
   checkName1();
   checkName2();
@@ -163,16 +154,12 @@ function deleteWinnerCard(event) {
 function disableButtons() {
   enableButtons.disabled = true;
 };
-
-
 function randomNumGen(min, max) {
   randomNum = parseInt(Math.random() * (max - min) + min);
-
   console.log(randomNum);
 };
-
 function setRangeError() {
-  if (userMinNum.value > userMaxNum.value) {
+  if (userMinNum.value < userMaxNum.value) {
     rangeErrorMsg.style.display = 'inline'
   } else {
     rangeErrorMsg.style.display = 'none'
