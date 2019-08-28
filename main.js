@@ -28,11 +28,13 @@ var errorChallenger2Guess = document.querySelector('#error-msg-challenger-2-gues
 var winnerCard = document.querySelector('.winner-card');
 var clearGameButton = document.querySelector('#clear-game-button');
 var leftSideBoxes = document.querySelector('.left-side-boxes');
-var leftSide = document.querySelector('left-side-cards');
-var clearGame = document.querySelectorAll('form');
-var inputForm = document.querySelectorAll('input-form-box');
+var leftSide = document.querySelector('.left-side-cards');
+var clearGame = document.querySelectorAll('.form');
 
 var aside = document.querySelector('#right-aside')
+
+var resetButton = document.querySelector('#reset-button');
+var guessBoxes = document.querySelectorAll('.guess-box');
 
 
 updateRangeButton.addEventListener('click', function() {
@@ -46,7 +48,7 @@ updateRangeButton.addEventListener('click', function() {
 
 submitGuessButton.addEventListener('click', clickSubmit);
 
-clearGameButton.addEventListener('click', clearGame);
+clearGameButton.addEventListener('click', clearGameFunc);
 
 aside.addEventListener('click', deleteWinnerCard);
 
@@ -59,33 +61,7 @@ for (var i = 0; i < contentInForms.length; i++) {
   });
 };
 
-// contentInForms[0].addEventListener('input', function(){
-//   enableButtons[0].disabled = false;
-//   enableButtons[1].disabled = false;
-//   enableButtons[0].classList.remove('disable-button');
-//   enableButtons[1].classList.remove('disable-button');
-// });
-//
-// contentInForms[1].addEventListener('input', function(){
-//   enableButtons[0].disabled = false;
-//   enableButtons[1].disabled = false;
-//   enableButtons[0].classList.remove('disable-button');
-//   enableButtons[1].classList.remove('disable-button');
-// });
-//
-// contentInForms[2].addEventListener('input', function(){
-//   enableButtons[0].disabled = false;
-//   enableButtons[1].disabled = false;
-//   enableButtons[0].classList.remove('disable-button');
-//   enableButtons[1].classList.remove('disable-button');
-// });
-//
-// contentInForms[3].addEventListener('input', function(){
-//   enableButtons[0].disabled = false;
-//   enableButtons[1].disabled = false;
-//   enableButtons[0].classList.remove('disable-button');
-//   enableButtons[1].classList.remove('disable-button');
-// });
+resetButton.addEventListener('click', clearGuesses);
 
 function randomNumGen(min, max) {
   randomNum = parseInt(Math.random() * (max - min) + min);
@@ -97,6 +73,12 @@ function disableButtons() {
   enableButtons.disabled = true;
 };
 
+function clearGuesses() {
+  for (var i = 0; i < guessBoxes.length; i++) {
+    guessBoxes[i].value = '';
+  }
+}
+
 function clickSubmit(){
   checkName1();
   checkName2();
@@ -107,11 +89,14 @@ function clickSubmit(){
   checkChallenger2Guess();
 };
 
-function clearGame() {
-  for (var i = 0; i < clearGame.length; i++) {
-    clearGame[i].reset();
+function clearGameFunc() {
+  for (var i = 0; i < contentInForms.length; i++) {
+    contentInForms[i].value = '';
   }
+  randomNumGen();
 };
+
+
 function checkName1(){
   console.log(challenger1Name.value);
   if (challenger1Name.value.match(nameRegex)) {
