@@ -13,6 +13,8 @@ header {
   margin: 0px;
 }
 
+/* HEADER FORMATTING  */
+
 .header-text {
   color: #DD1972;
   font-size: 2.5em;
@@ -43,21 +45,15 @@ header {
   display: inline-block;
 }
 
-/* .header-subtext: before,
-.header-subtext: after {
-  content: "";
-  position: absolute;
-  height: 20px;
-  border: 3px 0px 0px 0px;
-  border: #fff;
-  width: 100%;
-} */
+/* BODY FORMATTING  */
 
 .under-header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+/* FORMS ON LEFT SIDE */
 
 .left-side-boxes {
   display: flex;
@@ -118,10 +114,6 @@ img {
   width: .8em;
   height: .8em;
 }
-
-/* .error-msg-wrapper {
-  display: none;
-} */
 
 .error-msg {
     color: #DD1972;
@@ -212,7 +204,7 @@ img {
   height: inherit;
   border-left: 1px solid #D0D2D3;
 }
-
+/* WINNER CARDS */
 aside {
   background-color: #D0D2D3;
   display: flex;
@@ -238,7 +230,6 @@ aside {
   height: 1em;
   width: 90%;
   border-top: 1px solid #D0D2D3;
-  /* display: inline-block; */
 }
 
 .bold-winner-name {
@@ -269,6 +260,7 @@ aside {
 }
 
 /* MEDIA QUERIES */
+
 /* IPAD */
 @media screen and (max-width: 768px) {
   .left-side-boxes {
@@ -336,25 +328,4 @@ aside {
     flex-direction: column;
     justify-content: space-between;
   }
-}
-
-/* IPHONE 5/SE PLUS*/
-@media screen and (max-width: 320px) {
-
-  .header-text {
-    font-size: 2em;
-  }
-
-  .header-subtext {
-    width: 80%;
-  }
-
-  .top-white-lines {
-    width: 10%;
-  }
-
-  .name-and-box {
-    width: 100%;
-  }
-
 }
