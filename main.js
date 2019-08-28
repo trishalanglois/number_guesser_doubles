@@ -92,13 +92,10 @@ function clickSubmit(){
 };
 
 function clearGameFunc() {
-  console.log('test');
   for (var i = 0; i < contentInForms.length; i++) {
     contentInForms[i].value = '';
   }
-  
-  // // randomNumGen();
-  // // disableButtons();
+  randomNumGen();
 };
 
 
