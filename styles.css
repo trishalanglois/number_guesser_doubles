@@ -274,9 +274,16 @@ aside {
   .left-side-boxes {
     flex-direction: column;
     width: 100%;
+    align-items: center;
   }
 
   aside {
+    width: 100%;
+  }
+  
+  .input-form-box {
+    border: 1px solid #D0D2D3;
+    height: 2em;
     width: 100%;
   }
 }
@@ -294,7 +301,6 @@ aside {
 }
 /* IPHONE 6/7/8 PLUS*/
 @media screen and (max-width: 375px) {
-
 
   .top-white-lines {
     width: 14%;
