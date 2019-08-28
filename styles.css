@@ -295,6 +295,7 @@ aside {
 /* IPHONE 6/7/8 PLUS*/
 @media screen and (max-width: 375px) {
 
+
   .top-white-lines {
     width: 14%;
   }
@@ -338,8 +339,15 @@ aside {
   }
 }
 
-/* IPHONE 5/SE PLUS*/
+/* IPHONE 5/SE */
 @media screen and (max-width: 320px) {
+  .top-white-lines {
+    width: 14%;
+  }
+
+  .header-subtext {
+    width: auto;
+  }
 
   .header-text {
     font-size: 2em;
