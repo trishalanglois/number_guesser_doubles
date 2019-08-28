@@ -41,15 +41,7 @@ var userParseMax;
 
 var rangeErrorMsg = document.querySelector('#range-error-msg');
 
-updateRangeButton.addEventListener('click', function() {
-  newMinNum.innerText = userMinNum.value;
-  newMaxNum.innerText = userMaxNum.value;
-  userParseMin = parseInt(userMinNum.value);
-  userParseMax = parseInt(userMaxNum.value);
-  randomNumGen(userParseMin, userParseMax);
-  disableButtons();
-  setRangeError();
-});
+updateRangeButton.addEventListener('click', clickUpdate);
 
 submitGuessButton.addEventListener('click', clickSubmit);
 
@@ -68,8 +60,19 @@ for (var i = 0; i < contentInForms.length; i++) {
   });
 };
 
+function clickUpdate() {
+  newMinNum.innerText = userMinNum.value;
+  newMaxNum.innerText = userMaxNum.value;
+  userParseMin = parseInt(userMinNum.value);
+  userParseMax = parseInt(userMaxNum.value);
+  randomNumGen(userParseMin, userParseMax);
+  disableButtons();
+  setRangeError();
+};
+
 function randomNumGen(min, max) {
   randomNum = parseInt(Math.random() * (max - min) + min);
+
   console.log(randomNum);
 };
 
@@ -81,6 +84,8 @@ function disableButtons() {
 function setRangeError() {
   if (userMinNum.value > userMaxNum.value) {
     rangeErrorMsg.style.display = 'inline'
+  } else {
+    rangeErrorMsg.style.display = 'none'
   }
 }
 
@@ -91,7 +96,6 @@ function clearGuesses() {
 }
 
 function clickSubmit(){
-  checkRange1();
   checkName1();
   checkName2();
   checkGuess1();
@@ -99,6 +103,7 @@ function clickSubmit(){
   updateNamesGuesses();
   checkChallenger1Guess();
   checkChallenger2Guess();
+  checkRange1();
   checkRange2();
 };
 
@@ -106,7 +111,10 @@ function clearGameFunc() {
   for (var i = 0; i < contentInForms.length; i++) {
     contentInForms[i].value = '';
   }
-  randomNumGen();
+  randomNumGen(min, max);
+  clickUpdate();
+  newMinNum.innerText = 1;
+  newMaxNum.innerText = 100;
 };
 
 
@@ -200,7 +208,6 @@ function showWinnerCard () {
 function checkChallenger1Guess() {
   var parseChallenger1 = parseInt(challenger1Guess.value);
   console.log(parseChallenger1);
-  // console.log(randomNum);
   if (parseChallenger1 > randomNum) {
     guessFeedbackMessage1.innerText = "That's too high!"
   } else if (parseChallenger1 < randomNum) {
