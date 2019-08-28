@@ -39,6 +39,7 @@ var clearGame = document.querySelectorAll('.form');
 var aside = document.querySelector('#right-aside')
 
 var resetButton = document.querySelector('#reset-button');
+var guessBoxes = document.querySelectorAll('.guess-box');
 
 
 updateRangeButton.addEventListener('click', function() {
@@ -78,7 +79,9 @@ function disableButtons() {
 };
 
 function clearGuesses() {
-  document.querySelectorAll('.guess-box').innerText = '';
+  for (var i = 0; i < guessBoxes.length; i++) {
+    guessBoxes[i].value = '';
+  }
 }
 
 function clickSubmit(){
