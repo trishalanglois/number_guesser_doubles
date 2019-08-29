@@ -21,8 +21,11 @@ In this fun, two-person game, users will enter a minimum and maximum number to s
 
 ## Key Takeaways
 In this project, I executed the following concepts:
+
 **1. Flexbox** - Much of my layout is done using Flexbox.  Flexbox was critical in my alignment and spacing for both the desktop and mobile view.
+
 **2. DOM Manipulation** - Based on just a handful of user inputs, the game becomes personalized and gives the user the gratification of seeing their own information being displayed.
+
 **3. Conditionals** - Many of the error messages display as a result of a conditional, taking into account multiple variables set up using querySelectors.
 
 
