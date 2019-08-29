@@ -13,6 +13,8 @@ header {
   margin: 0px;
 }
 
+/* HEADER FORMATTING  */
+
 .header-text {
   color: #DD1972;
   font-size: 2.5em;
@@ -43,21 +45,15 @@ header {
   display: inline-block;
 }
 
-/* .header-subtext: before,
-.header-subtext: after {
-  content: "";
-  position: absolute;
-  height: 20px;
-  border: 3px 0px 0px 0px;
-  border: #fff;
-  width: 100%;
-} */
+/* BODY FORMATTING  */
 
 .under-header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+/* FORMS ON LEFT SIDE */
 
 .left-side-boxes {
   display: flex;
@@ -109,6 +105,14 @@ h3 {
   width: 100%;
 }
 
+.input-form-box:focus {
+  margin: 0px;
+  width: 100%;
+  border: 1px solid #DD1972;
+  box-shadow: 0 0 5px #DD1972;
+  outline: none;
+}
+
 .error-msg-wrapper {
   display: flex;
   align-items: flex-end;
@@ -118,10 +122,6 @@ img {
   width: .8em;
   height: .8em;
 }
-
-/* .error-msg-wrapper {
-  display: none;
-} */
 
 .error-msg {
     color: #DD1972;
@@ -147,6 +147,10 @@ img {
   height: 2em;
   margin-top: 1.25em;
   font-weight: bold;
+}
+
+.button:hover {
+  background-color: #DD1972;
 }
 
 .disable-button {
@@ -212,7 +216,7 @@ img {
   height: inherit;
   border-left: 1px solid #D0D2D3;
 }
-
+/* WINNER CARDS */
 aside {
   background-color: #D0D2D3;
   display: flex;
@@ -238,15 +242,14 @@ aside {
   height: 1em;
   width: 90%;
   border-top: 1px solid #D0D2D3;
-  /* display: inline-block; */
 }
 
 .bold-winner-name {
   color: #6E6E6E;
   font-size: 2em;
   font-weight: bold;
-  margin-top: 0px;
   margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .winner-card-winner {
@@ -270,6 +273,18 @@ aside {
 
 /* MEDIA QUERIES */
 
+/* IPAD */
+@media screen and (max-width: 768px) {
+  .left-side-boxes {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  aside {
+    width: 100%;
+  }
+}
+
 /* SMALL BROWSER WINDOW */
 @media screen and (max-width: 565px) {
 
@@ -283,25 +298,6 @@ aside {
   }
 }
 
-/* IPAD */
-@media screen and (max-width: 768px) {
-  .left-side-boxes {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-  }
-
-  aside {
-    width: 100%;
-  }
-
-  .input-form-box {
-    border: 1px solid #D0D2D3;
-    height: 2em;
-    width: 100%;
-  }
-}
-
 /* IPHONE 6/7/8 PLUS*/
 @media screen and (max-width: 375px) {
 
@@ -310,7 +306,7 @@ aside {
   }
 
   .header-subtext {
-    width: 80%;
+    width: auto;
   }
 
   #min-max-range {
@@ -346,29 +342,4 @@ aside {
     flex-direction: column;
     justify-content: space-between;
   }
-}
-
-/* IPHONE 5/SE */
-@media screen and (max-width: 320px) {
-  
-  .top-white-lines {
-    width: 14%;
-  }
-
-  .header-text {
-    font-size: 2em;
-  }
-
-  .header-subtext {
-    width: 80%;
-  }
-
-  .top-white-lines {
-    width: 10%;
-  }
-
-  .name-and-box {
-    width: 100%;
-  }
-
 }
