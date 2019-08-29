@@ -3,7 +3,7 @@ In this fun, two-person game, users will enter a minimum and maximum number to s
 
 ## The Comp
 ### Desktop View
-![Comp of Number Guesser](https://imgur.com/7Z75Zhy)
+![Comp of Number Guesser](https://imgur.com/7Z75Zhy.png)
 
 ### Mobile View
 
