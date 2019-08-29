@@ -3,7 +3,7 @@ In this fun, two-person game, users will enter a minimum and maximum number to s
 
 ## The Comp
 ### Desktop View
-https://imgur.com/7Z75Zhy
+(https://imgur.com/7Z75Zhy)
 
 ### Mobile View
 
