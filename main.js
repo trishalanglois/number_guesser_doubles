@@ -140,9 +140,9 @@ function clickSubmit(){
   checkName2();
   checkGuess1();
   checkGuess2();
-  updateNamesGuesses();
   checkChallenger1Guess();
   checkChallenger2Guess();
+  updateNamesGuesses();
   checkRange1();
   checkRange2();
 };
@@ -160,9 +160,8 @@ function randomNumGen(min, max) {
   console.log(randomNum);
 };
 function setRangeError() {
-  if (userMinNum.value > userMaxNum.value) {
+  if (userMinNum.value < userMaxNum.value) {
     rangeErrorMsg.style.display = 'inline';
-    userRangeNum.style.border = '1px solid #DD1972';
   } else {
     rangeErrorMsg.style.display = 'none'
   }
@@ -172,13 +171,13 @@ function showWinnerCard () {
   <article class="winner-card">
     <div id="challenger-1-vs-challenger-2-wrapper">
       <p class="challenger-1-name-input-display bold-score-box-text">
-        Challenger 1 Name
+        ${challenger1Name.value}
       </p>
       <p class="light-form-text">
         vs
       </p>
       <p class="challenger-2-name-input-display bold-score-box-text">
-        Challenger 2 Name
+        ${challenger2Name.value}
       </p>
     </div>
     <div id="winner-name-and-winner">
