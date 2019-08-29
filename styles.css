@@ -100,12 +100,6 @@ h3 {
   color: #6E6E6E;
 }
 
-/* .error-highlight: focus {
-
-  margin: 0px;
-  width: 100%;
-} */
-
 .input-form-box {
   margin: 0px;
   width: 100%;
@@ -290,6 +284,7 @@ aside {
     width: 100%;
   }
 }
+
 /* SMALL BROWSER WINDOW */
 @media screen and (max-width: 565px) {
 
@@ -302,11 +297,12 @@ aside {
     width: 100%;
   }
 }
+
 /* IPHONE 6/7/8 PLUS*/
 @media screen and (max-width: 375px) {
 
   .top-white-lines {
-    width: 14%;
+    width: 30%;
   }
 
   .header-subtext {
